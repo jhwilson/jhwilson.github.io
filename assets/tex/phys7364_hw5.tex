@@ -1,0 +1,70 @@
+\documentclass{jhwhw}
+
+\usepackage{amsfonts}
+\usepackage{listings}
+
+\DeclareMathOperator{\Rer}{Re}
+\DeclareMathOperator{\Imr}{Im}
+
+\author{}
+\title{PHYS 7364 -- Homework \#5}
+\date{21 March 2022}
+
+\begin{document}
+
+\problem{The quantum anomalous Hall effect in a square lattice model}
+
+The entire homework this week will be dedicated to solving on specific model, replicating the work we did for the Haldane model.
+Part of this work will include \emph{model building}.
+In order to understand what we mean, in the Haldane model we introduced hoppings $i t_{2}$ which made the gap at Dirac nodes change sign driving us from trivial to topological.
+In this problem, you will need to discover a term that does the same thing.
+It is therefore \emph{crucial} that you make sure each part is correct before moving on.
+
+The base model we will consider a tight-binding model with spin on a square lattice (lattice spacing $a = 1$)
+\begin{equation}
+  H_{1} = \sum_{\mathbf r} \left(i t_{1} \sigma_{x} \otimes \ket{\mathbf r + \hat{\mathbf x}}\bra{\mathbf r}  + i t_{1} \sigma_{y} \otimes \ket{\mathbf r + \hat{\mathbf y}}\bra{\mathbf r} + \mathrm{h.c.}\right).\label{eq:soc}
+\end{equation}
+Throughout, we will consider the chemical potential to be at $E=0$ (the entire lower band will be filled.)
+
+\begin{enumerate}
+  \item Rewrite this Hamiltonian in momentum space. (Do not diagonalize in the spin basis represented by the Pauli matrices $\sigma_{x}$ and $\sigma_{y}$.) What are the energy bands $E_{\pm}(\mathbf k)$ (for the two bands labeled by $\pm$)?
+  \item \emph{Dirac nodes}: Where does $E_{+}(\mathbf k) = E_{-}(\mathbf k) = 0$? (Hint: there should be 4 points in the Brillouin zone.) Expand the Hamiltonian about each point to obtain Dirac nodes. What are the \emph{helicities} of each Dirac node? [Helicity is defined by $\delta = \sgn(a b)$ for $h = a k_{x }\sigma_{x} + b k_{y}\sigma_{y}$.]
+  \item Add in a \emph{Zeeman} energy term
+        \begin{equation}
+          H_{\Delta} = \Delta \sum_{\mathbf r} \sigma_{z} \otimes \ket{\mathbf r} \bra{\mathbf r}.\label{eq:zeeman}
+        \end{equation}
+        With this term answer the following:
+        How does this modify the Dirac nodes in (b)? What is the Berry curvature $\Omega_{k_{x},k_{y}}$near each Dirac node? And as a result, what is each Dirac nodes contribution to $\sigma_{xy}$? Lastly, what is the total $\sigma_{xy}$?
+  \item With $H = H_{1} + H_{\Delta}$, draw a 3D picture of the Brillouin zone and $\Delta$ on the third axis. Indicate where all four Berry monopoles are and their charges (i.e., helicities). How does this explain $\sigma_{xy}$ from part (c)?
+  \item Staying purely in momentum space, construct an $H_{2}(\mathbf k)$ across the entire Brillouin zone that ``moves'' the monopoles around and can drive a topological phase transition. Some hints: (1) $H_{2}(\mathbf k)$ should look like $+t_{2} \sigma_{z}$ at one Dirac node and $-t_{2} \sigma_{z}$ at the other Dirac nodes (this is not the only way one can do this -- consider what we need to change to realize different Chern numbers). (2) Away from those nodes they should be at most quadratic in momentum. (i.e., If the Dirac node is at $\mathbf K_{D}$ and has positive helicity, then $H_{2}(\mathbf K_{D} + \mathbf q) = t_{2} \sigma_{z} + O(q^{2})$.) (3) To make simpler models in real space use only terms that are $\sigma_{z}$ multiplied by $1$, $\sin(k_{x})$, $\cos(k_{x})$, $\sin(k_{y})$, or $\cos(k_{y})$.
+  \item With the $H_{2}(\mathbf k)$ from part (e), rewrite it as a tight-binding model in real space such as how Eqs.~\eqref{eq:soc} and \eqref{eq:zeeman} look like.
+  \item Determine where the topological phase transition occurs for your full constructed model $H = H_{1} + H_{\Delta} + H_{2}$ and draw a phase diagram of $t_{1}/ \Delta$ vs.\ $t_{2}/ \Delta$ and indicate the different topological phases.
+\end{enumerate}
+
+\problem{Numerically solving the model}
+
+In this problem, we will use $H = H_{1} + H_{\Delta} + H_{2}$ from the previous problem only implemented on the full tight-binding model numerically.
+Much of this is a reworking of the code \textsc{haldane\_bsr.py} (part b), \textsc{haldane\_bcurv.py} (part c), and \textsc{haldane\_topo.py} (part d).
+
+Implement the model with \textsc{PythTB.py}. While we have used the language of spin, it might be useful to use orbitals both located at point $\mathbf r = (0,0)$ in the unit cell. For instance, we can implement Eqs.~\eqref{eq:soc} and \eqref{eq:zeeman} with
+\begin{lstlisting}[language=Python]
+  lattice_vecs = [[1.0, 0.0], [0.0, 1.0]]
+  orb_positions = [[0.0, 0.0], [0.0, 0.0]]
+  model = tb_model(2, 2, lattice_vecs, orb_positions)
+  model.set_onsite([-delta, delta])
+  model.set_hop(t1 * 1.j, 0, 1, [1, 0])
+  model.set_hop(t1 * 1.j, 1, 0, [1, 0])
+  model.set_hop(t1,  1, 0, [0, 1])
+  model.set_hop(-t1, 1, 0, [0, 1]).
+\end{lstlisting}
+(This code does not implement $H_{2}$.)
+
+\begin{enumerate}
+  \item Write out the code used to implement your $H_{2}$ from Problem 1.
+  \item Compute dispersions along the path in the square Brillouin zone $\Gamma = (0,0)$ to $X = (\pi, 0)$ to $M = (\pi, \pi)$ and back to $\Gamma$ for 4 cases: $H_{2} = 0$, and for $H_{2} \neq 0$ but in topological phase, trivial phase, and at the transition points. Mark the band inversion at the high-symmetry point (if your model is not captured by the above path, modify the path to include it). Plot these four cases.
+  \item
+  Compute and plot the Berry curvature (level curves, color plot, or 3d plot) across the whole Brillouin zone for $H_{2} = 0$, and for $H_{2} \neq 0$ in both trivial and topological phases. (3 plots total.)
+  \item For a ribbon/cylinder geometry plot the hybrid Wannier centers as defined by Berry phase along with the edge band structure in the trivial and topological phases. This shows both \emph{charge pumping} and \emph{edge states} in the model you created!
+\end{enumerate}
+
+\end{document}

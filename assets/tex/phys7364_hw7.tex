@@ -1,0 +1,102 @@
+\documentclass{jhwhw}
+
+\usepackage{amsfonts}
+\usepackage{listings}
+
+\DeclareMathOperator{\Rer}{Re}
+\DeclareMathOperator{\Imr}{Im}
+
+\author{}
+\title{PHYS 7364 -- Homework \#7}
+\date{19 Apr 2022}
+
+\begin{document}
+
+
+\problem{Coherent state path integral}
+
+In this problem, we will derive the coherent state path integral -- which is crucial for bosonic path integrals. Consider the harmonic oscillator Hamiltonian $H=\omega a\hc a$ where $a = \sqrt{\frac{m\omega}2}(x + i \frac p {m\omega})$. (We will neglect the zero point energy in this problem). For any complex number $\alpha$, one can define a corresponding \emph{coherent state} by
+\begin{align*}
+   \ket\alpha = e^{-|\alpha|^2/2} e^{-\alpha a\hc} \ket 0.
+\end{align*}
+The coherent states $\ket \alpha$ satisfy
+\begin{align*}
+  a\ket\alpha = \alpha \ket \alpha.
+\end{align*}
+In addition, one can check that they are normalized so that
+\begin{align}
+  \braket{\beta | \alpha} &= \exp(-|\alpha|^2/2 - |\beta|^2/2 + \beta^*\alpha), \label{eq:1} \\
+ 1 & = \int \frac{\rd^2 \alpha}\pi \ket\alpha \bra \alpha \label{eq:2}.
+\end{align}
+(Here $\rd^2\alpha = \rd(\Re[\alpha]) \rd(\Im [\alpha])$.)
+\begin{enumerate}
+\item The coherent state time evolution operator is defined by $U(\alpha_f,t_f;\alpha_i,t_i) = \braket{\alpha_f|e^{-iH(t_f-t_i)}|\alpha_i}$. Writing $e^{-i H(t_f - t_i)} = (e^{-i H \Delta t})^N$ and inserting the identity operator (\ref{eq:2}) appropriately, derive an expression for $U$ in terms of a discrete path integral over paths $\alpha(t)$. Take the continuum limit, and show that the Lagrangian is
+  \begin{align}
+    L = \frac i 2 (\alpha^* \dot \alpha - \alpha \dot \alpha^*) - \omega |\alpha|^2.\label{eq:3}
+  \end{align}
+\item Show that the Lagrangian (\ref{eq:3}) is the same as the phase-space Lagrangian $L= p \dot x - \frac {p^2}{2m} - \frac{m\omega^2 x^2}2$ up to a total time derivative term.
+\end{enumerate}
+
+
+\problem{Path Integral and Operator Ordering}
+
+A 3D quantum particle in a magnetic field is described by the quantum Hamiltonian
+\begin{align}
+  H & = \frac1{2m}(p - A(x))^2 \nonumber \\
+ & = \frac1{2m}(p^2 - pA(x) - A(x)p +A(x)^2)\label{eq:7}.
+\end{align}
+(Here we set $q=c=1$ for simplicity).
+\newcommand{\propx}{U(x_f,t_f;x_i,t_i)}
+\newcommand{\dt}{\Delta t}
+\begin{enumerate}
+\item Writing $e^{-iH(t_f-t_i)} = (e^{-iH\dt})^N$, derive a discrete (Lagrangian) path integral expression for $\propx$. Use the ordering of $p$, $A(x)$ in Eq.~(\ref{eq:7}).
+\item The Hamiltonian can be equivalently written as
+  \begin{align}
+    H = \frac1{2m}(p^2 - 2p A(x) - i \nabla \cdot A(x) + A(x)^2)\label{eq:8}.
+  \end{align}
+Derive a discrete (Lagrangian) path integral expression for $U$ using the ordering in Eq.~(\ref{eq:8}).
+\item Take the continuum limit and show that the first discrete integral leads to a continuum path integral with Lagrangian $L= \frac m 2 \dot x^2 + A(x) \dot x$, while the second leads to $L = \frac m 2 \dot x^2 + A(x)\dot x + \frac {i \nabla \cdot A(x)}{2m}$.
+\item The additional $\frac{i \nabla \cdot A(x)}{2m}$ term has a real physical effect (it is not a total derivative) so something must be wrong. The resolution of this apparent paradox is that continuum path integrals with terms like $A(x) \dot x$ are inherently ambiguous/ill-defined. Consider the following two discretizations of $A(x) \dot x$:
+  \begin{align}
+    \inp{\frac{A(x_k) + A(x_{k-1})}2}\inp{\frac{x_k-x_{k-1}}{\dt}}; && A(x_{k-1})\inp{\frac{x_k-x_{k-1}}{\dt}}.\label{eq:9}
+  \end{align}
+Argue that for a typical path in the path integral, the difference between these two terms is of order $(\dt)^0$ so that the difference between the amplitudes obtained from the two discretizations is finite in the limit $N\rightarrow\infty$. This is the path integral analogue of the operator ordering ambiguity which occurs when quantizing a classical theory.
+\end{enumerate}
+
+\problem{Harmonic oscillator path integral}
+
+Calculate the time evolution operator $\propx$ for the harmonic oscillator $H=\frac {p^2}{2m} + \frac{m\omega_0 x^2}2$ by generalizing the free particle calculation from class. You may wish to use the identity $\det(C_n)=\sin((n+1)x)/\sin(x)$ where $C_n$ is the tridiagonal $n\times n$ matrix
+\begin{align}
+  \label{eq:26}
+C_n =
+\begin{pmatrix}
+  2\cos x & -1 & 0 &  \\
+  -1 & 2 \cos x & -1 & \ldots \\
+ 0 & -1 & 2 \cos x &  \\
+ & \vdots & & \ddots
+\end{pmatrix}
+\end{align}
+Using analytic continuation, write down the imaginary time evolution operator $U_{\text{im}}(x_f,\tau_f;x_i,\tau_i)$. By examining the decay of $U_{\text{im}}(0,\tau_f; 0, \tau_i)$ in the limit $\tau_f - \tau_i \rightarrow \infty$, find the ground state energy.
+(\emph{Hint:} In imaginary time $e^{-\beta H} \rightarrow \ket{E_{0}}\bra{E_{0}} e^{-\beta E_{0}}$ as $\beta\rightarrow \infty$, and $\beta = \tau_{f} -\tau_{i} = 1/T$ for temperature $T$)
+
+
+\problem{Free particle on a ring}
+
+Consider a free quantum particle on a ring. Let $\theta$ be the angular coordinate and $L$ be the angular momentum, with $[\theta,L]=i$. The Hamiltonian is then $H=L^2/2I$.
+\begin{enumerate}
+\item Solving the system directly, derive an expression of the partition function $\mathcal Z=\tr [e^{-\beta H}]$ of the form
+  \begin{align}
+    \mathcal Z = \sum_{n=-\infty}^\infty e^{-\beta E_n},\label{eq:43}
+  \end{align}
+and compute $E_n$.
+\item Using the imaginary time path integral, derive an expression for $\mathcal Z$ of the form
+  \begin{align}
+    \mathcal Z = A(\beta) \sum_{m=-\infty}^\infty e^{-F(m)/\beta}\label{eq:44}.
+  \end{align}
+Calculate $A(\beta)$, $F(m)$.
+\item Compute the leading behaviour of the two expressions Eq.~(\ref{eq:43}) and Eq.~(\ref{eq:44}) for $\mathcal Z$ in the limits $\beta\rightarrow 0$, $\beta \rightarrow \infty$ and show that they agree. (The fact that they agree in general can be derived using the Poisson summation formula).
+\end{enumerate}
+
+
+
+\end{document}

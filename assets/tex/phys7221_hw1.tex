@@ -1,0 +1,70 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#1}
+\date{Due: 30 August 2022}
+
+\begin{document}
+
+\problem{[12pts] Some basic math of classical mechanics}
+
+Classical mechanics requires knowledge of linear algebra, differential equations, and approximations.
+The goal of this question is to get you acquainted and in the right mathematical mindset for this course
+\begin{enumerate}
+  \item {[4pts]} Linear Algebra: Consider the matrix
+        \begin{equation}
+          \label{eq:5}
+          M =
+          \begin{pmatrix}
+            a & b & 0 & b \\
+            b & a & b & 0 \\
+            0 & b & a & b \\
+            b & 0 & b & a \\
+          \end{pmatrix},
+        \end{equation}
+      find the eigenvalues, their degeneracies, and the four eigenvectors. Show that the eigenvectors are orthogonal (i.e., the dot product $\sum_{i} v_{i} w_{i} = 0$ for different eigenvectors $v$ and $w$).
+  \item {[4pts]} Differential equations: a mass on a spring obeys the equation
+        \begin{equation}
+          \label{eq:6}
+          m \ddot x(t) = - k x(t), \quad x(0) = x_{0}, \quad \dot x(0) = v_{0}.
+        \end{equation}
+        Derive the full solution for $x(t)$. What is the frequency spring in radians per second? What is the period?
+  \item {[4pts]} Taylor expansions: We will often use approximations and one classic example of this is the Taylor expansion $f(y) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} y^{n}$. In the following expressions, write the first four terms in the Taylor expansion in the variable $x$ assuming $a$ is constant (up to the $x^{3}$ term): (1) $1/(x-a)$, (2) $\sin(a x)/x$, and (3) $\exp(x \cos(a x))$.
+\end{enumerate}
+
+
+\problem{[12pts] Functional derivatives}
+
+In class we discussed functional derivatives and extremizing the action.
+In this problem, we will build up this idea from basic calculus
+\begin{enumerate}
+  \item {[4pts]} Single variable: Find the minimum of the function $f(x) = a x^{2}+ b x + c$ assuming $a>0$.
+  \item {[4pts]} Multi-variable: Find the extremal value for the function
+        \begin{equation}
+          \label{eq:1}
+          f(x,y,z) = a(x^{2}+y^{2}+z^{2}) + 2b(xy + yz + xz) + J x + 2J y - J z.
+        \end{equation}
+  \item {[4pts]} Even more variables: Determine what equations are needed to solve to find the extremum of the following expression with variables $x_{1}, x_{2}, \ldots, x_{N}$ (you do not have to solve them)
+        \begin{equation}
+          \label{eq:2}
+          S(x_{1}, x_{2}, \ldots, x_{N}) = \sum_{i=2}^{N} a (x_{i}- x_{i-1})^{2} - \sum_{i=1}^{N} b_{i} x_{i}^{2}.
+        \end{equation}
+  \item {[4pts]} Continuous variables: In Eq.~\eqref{eq:2} let $a = \frac{m}{2 \Delta t}$ and $b_{i} = \frac12 k_{i} \Delta t$, and $\Delta t = T/N$. Show that in the limit of $N\rightarrow \infty$ that Eq.~\eqref{eq:2} becomes an integral,
+        \begin{equation}
+          \label{eq:3}
+          S[x] = \int_{0}^{T} L[x(t), \dot x(t), t] dt.
+        \end{equation}
+  Derive what $L[x(t), \dot x(t), t]$ is and show that the Lagrange equations of motion you derive from it match the equations from part (c) above when $N\rightarrow \infty$.
+\end{enumerate}
+
+\problem{[30pts] Lagrangians, constraints, and equations of motion}
+
+Write the constraints, find generalized coordinates, write the Lagrangian, and find the equations of motion for the following physical systems
+\begin{enumerate}
+  \item {[10pts]} Double pendulum (see figure below).
+  \item {[10pts]} Pendulum on a slider (see figure below).
+  \item {[10pts]} Pendulum with a pivot point forced to rotate with angular velocity $\omega$ (see figure below).
+\end{enumerate}
+\includegraphics[width=\textwidth]{hw1_pendulums.pdf}
+
+\end{document}

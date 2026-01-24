@@ -1,0 +1,49 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#10}
+\date{Due: 22 November 2022}
+
+\DeclareMathOperator{\arccosh}{arccosh}
+
+\begin{document}
+
+\problem{[20 pts] Harmonic oscillator via Hamilton-Jacobi}
+
+Consider the Hamiltonian of a one-dimensional harmonic oscillator
+\begin{equation}
+  \label{eq:5}
+  H(q,p) = \frac{p^{2}}{2m} + \frac12 m \omega^{2} q^{2},
+\end{equation}
+where $\omega$ is a constant.
+What is the the solution to the corresponding Hamiltonian-Jacobi equation $W(q,t)$ (you don't need to evaluate the integral over $q$)?
+And using $W$, find the dynamical trajectories $q(t)$ and $p(t)$.
+
+
+\problem{[40 pts] Wave- to ray-optics with Hamilton-Jacobi}
+
+{\bf The setup}: If light is going through a medium with a local index of refraction $n(y)$ and is partially moving in the $y$ and $z$ direction, it is governed by the following wave equation
+\begin{equation}
+  \label{eq:1}
+  \frac{n(y)^{2}}{c^{2}}\pdf[2]{E}{t} - \pdf[2]{E}{y} - \pdf[2]{E}{z} = 0,
+\end{equation}
+in this problem, we will derive ray optics which gives a particle description of these waves.
+\begin{enumerate}
+  \item To find how light moves in this medium when it is at frequency $\omega$, substitute $$E(y,z,t) = A e^{-i(\omega t - \frac{\omega}c W(y,z))}$$ and keep terms only of order $(\omega/c)^{2}$ (high frequency approximation).
+  \item Solve for $\pdf{W}{z}$ putting the equation in the form of a Hamilton-Jacobi equation
+        \begin{equation}
+          \label{eq:2}
+          \pdf{W}{z} = - H\left(y, \pdf{W}{y}\right).
+        \end{equation}
+        What is the Hamiltonian $H(y, p)$? (\emph{Hint}: Many times in this problem you will encounter square roots. The {\bf positive} square roots will give you what you want but think about what the negative square roots mean physically; they are physical.)
+  \item Compute the Lagrangian $L(y, \rdf{y}{z}) = \rdf{y}{z} p - H(y, p)$ eliminating $(y,p)$ in favor of $(y, \rdf{y}{z})$. \emph{Note:} The spatial direction $z$ is acting like ``time'' in this situation.
+  \item Show that the ``action'' $S = \int L(y, \rdf{y}{z}) dz$ we are minimizing is related to the \emph{least time} of a ray between two points (this is called ``Fermat's principle'')
+        \begin{equation}
+          \label{eq:3}
+          T = \int_{A}^{B} \frac{n(y)}{c} \sqrt{1 + \left(\rdf{y}{z} \right)^{2}} dz =  \int_{A}^{B} \frac{n(y)}{c} \sqrt{dy^{2} + dz^{2}}
+        \end{equation}
+    \item Write a paragraph (at least 1/2-page) about what we have shown as a correspondence between classical waves and particles/rays. Compare this with the massive particles in classical mechanics. Is there an equation like Eq.~\eqref{eq:1} in classical mechanics? What about quantum mechanics?
+    \item For $n(y) = n_{0}\frac{y}{y_{0}}$, solve for $y(z)$ assuming $y(0) = y_{0}$ and $y'(0) = 0$. Furthermore, using $W(y,z) = b z + g(y)$, solve for $W(y,z)$ and write out the full form of $E(y,z,t)$ in this approximation.
+\end{enumerate}
+
+\end{document}

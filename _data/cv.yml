@@ -1,97 +1,419 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
-
+  - name: Full Name
+    value: Justin H. Wilson
+  - name: Title
+    value: Assistant Professor
+  - name: Institution
+    value: Louisiana State University
+  - name: Department
+    value: Physics & Astronomy
+  - name: Location
+    value: Baton Rouge, LA
+  - name: Email
+    value: jhwilson@lsu.edu
+  - name: Website
+    value: https://jhwilson.com
+    links:
+    - name: link
+      link: https://jhwilson.com
+  - name: ORCID
+    value: 0000-0001-6903-0417
+  - name: GitHub
+    value: jhwilson
+  - name: h-index
+    value: 25 (Google Scholar, November 15, 2025)
+- title: Research Interests
+  type: list
+  contents:
+  - Condensed matter physics
+  - Quantum information
+  - Analog gravity
+  - Disorder and incommensuration
+  - Measurement-induced effects
+  - Quantum materials
+  - Twisted bilayer graphene
+  - Topological states of matter
+  - Quantum field theory
+  - Non-equilibrium phenomena
+  - Random quantum circuits
+  - Numerical methods
+- title: Personal Statement
+  type: list
+  contents:
+  - Throughout my career, I have been propelled by the pursuit of fundamental questions at the intersection of condensed matter physics, quantum information, and analog gravity. In this quest, I have discovered novel physical phenomena and forged new theoretical frameworks, exploring how disorder, incommensuration, and measurement-induced effects shape quantum materials and dynamics. These themes, which I have found to be unifying principles that span solid-state systems, cold atomic gases, and emergent spacetimes, continue to inspire my research.
+- title: Appointments
+  type: time_table
+  contents:
+  - title: Assistant Professor
+    institution: Louisiana State University
+    department: Physics & Astronomy
+    location: Baton Rouge, LA
+    year: 2021 - present
+    description: []
+  - title: Postdoctoral Associate
+    institution: Rutgers University
+    department: Physics
+    location: Piscataway, NJ
+    year: 2018 - 2021
+    description:
+    - Research on quasiperiodicity (``magic-angle'' physics), disorder, and spinor condensates.
+  - title: Postdoctoral Researcher
+    institution: California Institute of Technology
+    department: Physics
+    location: Pasadena, CA
+    year: 2015 - 2018
+    description:
+    - Working on research projects related to cold atoms, topology, and disorder.
+  - title: Teaching/Research Assistant
+    institution: University of Maryland
+    department: Physics
+    location: College Park, MD
+    year: 2007 - 2015
+    description:
+    - Teaching physics labs, coursework, and grading. Additionally, research that would become part of my Ph.D. thesis.
+  - title: Undergraduate Research Assistant
+    institution: Texas A&M University
+    department: Mathematics
+    location: College Station, TX
+    year: 2006 - 2006
+    description:
+    - Summer work between junior and senior years doing research that would become part of my undergraduate honors thesis.
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
-
-- title: Experience
+  - title: Doctor of Philosophy
+    institution: The University of Maryland, College Park
+    department: Physics
+    location: College Park, MD
+    year: 2007 - 2015
+    description:
+    - 'Field: Theoretical Condensed Matter Physics'
+    - 'Thesis: Optical and Casimir Effects in Topological Materials'
+    - 'Advisor: Prof. Victor M. Galitski'
+    - In this dissertation, I explored the Casimir effect of Weyl semimetals as well as in other thin-film materials. I further studied the magneto-optics of a thin film topological insulator and the break down of the coherent state path integral.
+  - title: Master of Science
+    institution: The University of Maryland, College Park
+    department: Physics
+    location: College Park, MD
+    year: 2007 - 2011
+    description:
+    - 'Field: Theoretical Condensed Matter Physics'
+    - This degree focused on graduate level coursework in physics.
+  - title: Bachelor of Science (Double Degree)
+    institution: Texas A&M University, College Station
+    department: null
+    location: College Station, TX
+    year: 2003 - 2007
+    description:
+    - 'Field: Physics and Mathematics'
+    - 'Thesis: Vacuum energy in quantum graphs'
+    - 'Advisors: Prof. Stephen Fulling and Prof. Gregory Berkolaiko'
+    - 'Honors: Summa Cum Laude, Foundation Honors, University Honors, Honors in Math, and University Undergraduate Research Fellow'
+    - Double degrees in both physics and mathematics.
+- title: Grants
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
+  - title: NSF CAREER
+    institution: National Science Foundation
+    location: null
+    year: '2023'
+    description:
+    - Active Feedback to Control Dynamic Quantum Phases
+    - 'Grant number: DMR-2238895'
+    - 'PI: Justin H. Wilson'
+    - 'Status: active'
+    - 'Duration: 5 years (2023 July - 2028 July)'
+    - 'Amount: $505,301'
+  - title: Schwinger Foundation
+    institution: Schwinger Foundation
+    location: null
+    year: '2026'
+    description:
+    - Analog Gravity 2026
+    - 'Grant number: JSF-25-07-0002'
+    - 'PI: Ivan Agullo'
+    - 'Status: Conference funding'
+    - 'Duration: 1 January to 28 February 2026'
+    - 'Amount: $15,000'
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
+  - year: '2025'
+    items:
+    - LSU Alumni Association Rising Faculty Research Award
+    - $5,000 cash award
+    - The LSU Alumni Association Rising Faculty Research Award recognizes faculty at the rank of assistant professor who have outstanding records of scholarship and published research. Any full-time faculty member at the rank of assistant professor is eligible for this award (4 available).
+  - year: '2022'
+    items:
+    - NSF CAREER Award
+    - On the proposal Active Feedback to Control Dynamic Quantum Phases (see Grants section)
+- title: Student Awards
+  type: time_table
   contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+  - year: '2008'
+    title: Iskraut Award for Classical Physics
+    description:
+    - 'Stage: graduate'
+    - 'Institution: University of Maryland'
+    - 'Amount: $1,000'
+    - Highest score on classical physics qualifier
+  - year: '2007'
+    title: Texas A&M University's Nominated Thesis
+    description:
+    - 'Stage: undergraduate'
+    - 'Institution: Texas A&M University'
+    - Nominated for the National Collegiate Honors Council's (NCHC) Portz Award
+  - year: 2005-2007
+    title: Astronaut Scholar
+    description:
+    - 'Stage: undergraduate'
+    - 'Institution: Astronaut Scholarship Foundation'
+    - 'Amount: $20,000'
+  - year: '2006'
+    title: John B. Beckham Award
+    description:
+    - 'Stage: undergraduate'
+    - 'Institution: Texas A&M University'
+    - 'Amount: $1,000'
+    - Given to two graduating seniors in the College of Science at Texas A&M
+  - year: '2006'
+    title: James G. Potter Scholarship
+    description:
+    - 'Stage: undergraduate'
+    - 'Institution: Texas A&M University'
+    - 'Amount: $500'
+  - year: 2005, 2006
+    title: Honors Incentive Award
+    description:
+    - 'Stage: undergraduate'
+    - 'Institution: Texas A&M University'
+    - 'Amount: $2,000'
+  - year: '2005'
+    title: First Place in Texas A&M Freshman-Sophomore Math Contest
+    description:
+    - 'Stage: undergraduate'
+    - 'Institution: Texas A&M University'
+- title: Honor Societies
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+  - Phi Beta Kappa (2006)
+  - Phi Kappa Phi (2007)
+  - Sigma Xi (2007)
+  - Pi Mu Epsilon (2006)
+- title: Teaching
+  type: time_table
+  contents:
+  - year: Spring 2025
+    title: PHYS 4750 — Quantum Technologies (special topics)
+    institution: Louisiana State University
+    location: null
+    description:
+    - 'Role: Instructor'
+    - 'Course evaluation: 3.94/4.0 (3.45/4.0 Department average)'
+    - Special topics in quantum information and technology covering the basics of quantum computing and some basic quantum algorithms, and how to build qubits and gates in superconducting circuits, ion traps, and photonic systems.
+    - 'Student quote: Every week we had interesting homeworks which help us to think critically. Additionally, mathematics behind it was great and detailed.'
+    linkitems:
+    - link: https://jhwilson.com/quantum-technology
+      linkname: course
+  - year: Spring 2024
+    title: PHYS 2112 — Fluids, Thermodynamics, Waves, and Modern Physics (for engineers)
+    institution: Louisiana State University
+    location: null
+    description:
+    - 'Role: Instructor'
+    - 'Course evaluation: 3.95/4.0 (3.51/4.0 Department average)'
+    - Calculus-based physics. Fluids, oscillations and waves, thermodynamics, modern physics.
+    - 'Student quote: I love Mr. Wilson so much! He was always so excited for class. Students really felt his love for physics. That enthusiasm kept me engaged which in turn helped me learn the material extremely well. He was also very encouraging of his students.'
+    linkitems: []
+  - year: Fall 2023
+    title: PHYS 7221 — Classical Mechanics
+    institution: Louisiana State University
+    location: null
+    description:
+    - 'Role: Instructor'
+    - 'Course evaluation: 3.60/4.0 (3.49/4.0 Department average)'
+    - Study of particle mechanics and rigid body mechanics using the methods of Lagrange’s equations, Hamilton’s equations, canonical transformations and Hamilton-Jacobi theory.
+    - 'Student quote: Professor Justin Wilson demonstrated a passion and deep understanding of the subject matter, which enhanced my understanding and problem–solving skill for Lagrangian and Hamiltonian systems. Additionally, the professor''s availability for office hours is flexible and beneficial.'
+    linkitems: []
+  - year: Spring 2023
+    title: PHYS 7364 — Condensed Matter Physics II
+    institution: Louisiana State University
+    location: null
+    description:
+    - 'Role: Instructor'
+    - 'Course evaluation: 3.93/4.0 (3.34/4.0 Department average)'
+    - Application of quantum mechanics and statistical mechanics to condensed matter; lattice vibrations, energy bands in crystals, transport properties, collective excitations, ferromagnetism and superconductivity; theory of Fermi and Bose quantum fluids, phase transitions and critical phenomena.
+    - 'Student quote: Good experiment of class format. The homework questions went well with the readings and helped understand them better. [...].  Typed up notes like the double well potential also helped significantly. Instructor clarifications to questions were great most of the time.'
+    linkitems: []
+  - year: Fall 2022
+    title: PHYS 7221 — Classical Mechanics
+    institution: Louisiana State University
+    location: null
+    description:
+    - 'Role: Instructor'
+    - 'Course evaluation: 3.59/4.0 (3.42/4.0 Department average)'
+    - Study of particle mechanics and rigid body mechanics using the methods of Lagrange’s equations, Hamilton’s equations, canonical transformations and Hamilton-Jacobi theory.
+    - 'Student quote: I liked the class. One of the things I liked about the class was the fact that it made me understand was how certain things in classical mechanics laid the foundations of quantum mechanics [...]. The assignments were designed in a way to make me think critically and make me aware of my weaknesses in the subject.'
+    linkitems: []
+  - year: Spring 2022
+    title: PHYS 7364 — Condensed Matter Physics II
+    institution: Louisiana State University
+    location: null
+    description:
+    - 'Role: Instructor'
+    - 'Course evaluation: 3.72/4.0 (3.26/4.0 Department average)'
+    - Application of quantum mechanics and statistical mechanics to condensed matter; lattice vibrations, energy bands in crystals, transport properties, collective excitations, ferromagnetism and superconductivity; theory of Fermi and Bose quantum fluids, phase transitions and critical phenomena.
+    - 'Student quote: The instructor did a great job in communicating the contents of the course [...]. There are two factors that helped me most during the course: In–class mathematical derivations(rigor) and assignments.'
+    linkitems: []
+  - year: Summer 2009
+    title: PHYS 122 — Fundamentals of Physics II
+    institution: University of Maryland
+    location: null
+    description:
+    - 'Role: Teaching Assistant'
+    - Second semester of the introductory physics course for non-majors. I held recitations, labs, and graded.
+  - year: Spring 2009
+    title: PHYS 606 — Electrodynamics
+    institution: University of Maryland
+    location: null
+    description:
+    - 'Role: Teaching Assistant'
+    - Graduate course in electrodynamics where I graded, held office hours, and wrote up solutions to the instructor's problems.
+  - year: Spring 2008
+    title: PHYS 405 — Advanced Experiments
+    institution: University of Maryland
+    location: null
+    description:
+    - 'Role: Teaching Assistant'
+    - Advanced senior lab course for physics majors where I was in charge of helping students with standard classic experiments. Graded Lab notebooks, reports, and helped students in lab.
+  - year: Fall 2007, '08
+    title: PHYS 174 — Physics Laboratory Introduction
+    institution: University of Maryland
+    location: null
+    description:
+    - 'Role: Teaching Assistant'
+    - Introductory freshman lab course for physics majors where I oversaw the course with the main instructor. Answered questions, guided students, and graded labs.
+- title: Mentoring
+  type: nested_list
+  contents:
+  - title: Postdocs (current)
+    items:
+    - '2022 - Present — Andrew Allocca — Louisiana State University: Advising Andrew Allocca on projects related to quantum dynamics and quantum materials.'
+  - title: PhD students (current)
+    items:
+    - '2024 - Present — Devesh K. Verma — Louisiana State University: Advising Devesh Verma on projects related to stochastic control of quantum chaos.'
+    - '2023 - Present — Shriya Hirve — Louisiana State University: Advising Shriya Hirve on projects related to analog gravity and topological materials.'
+    - '2022 - Present — Dolly Nambi — Louisiana State University: Advising Dolly Nambi on projects related to measurement-induced phase transitions (entanglement and charge-sharpening).'
+    - '2022 - Present — Conner LeMaire — Louisiana State University: Advising Conner LeMaire on projects related to control transitions, collective measurements, and quantum error correction.'
+  - title: REU students (past)
+    items:
+    - '2023 — Kimberly Heard: CCT REU student. Programmed in Julia to create the frontend to some matrix-free tight-binding code.'
+    - '2022 — Levi Ryan: CCT REU student. Programmed his own percolation code to look at percolation transitions and inifite-randomness.'
+  - title: Junior mentoring
+    items:
+    - '2018 - 2023 — Yixing Fu — Graduate Student — Rutgers University: Co-mentoring Yixing Fu (Rutgers) with Jed Pixley on various aspects of quasiperiodicity and magic-angle semimetals including twisted bilayer graphene.'
+    - '2018 - 2020 — Kyle Bomeseil — Undergraduate — Rutgers University: Mentoring Kyle Bomeseil (Rutgers) on simulating a nonlinear Schrödinger equation in order to determine mean-field interaction effects in a Bose-Einstein condensate in a ``magic-angle'''' semimetal.'
+    - '2018 - 2020 — Aidan Zabalo — Graduate Student — Rutgers University: Co-mentoring Aidan Zabalo (Rutgers) with Jed Pixley on simulating a random circuit model with projective measurements to characterize a nonequilibrium phase transition from volume law to area law entanglement.'
+    - '2013 - 2014 — Michael Winer — High School Student — University of Maryland: Advised high school student Michael Winer on a project involving phonons in a 1D material which he then used to win first place in the Intel Science Talent Search. The national prize was written up in the Washington Post.'
+- title: Talks
+  type: nested_list
+  contents:
+  - title: 'Invited: workshops conferences'
+    items:
+    - '27 October 2025 — Interplay of Entanglement and Control in Quantum Dynamics — KITP Conference: Frontiers of Programmable Quantum Dynamics: Advances and Applications — Santa Barbara, CA'
+    - 8 October 2025 — Order and universality in hybrid and adaptive quantum dynamics — eQMA Workshop on Hidden Orders & Quantum Entanglement, Rice — Houston, TX
+    - 24 June 2024 — Critical filaments and enhanced superconductivity in a quasiperiodic Bistritzer-MacDonald model — Quantum Matter Through the Lens of Moiré Materials, Aspen Center for Physics — CO
+    - 26 October 2023 — Measurement-induced entanglement and control transitions using feedback — Quantum Information Processing Systems (QuantIPS) workshop, Rice — Houston, TX
+    - '21 Dec 2022 — Measurement and feedback-driven entanglement transition in the probabilistic control of chaos — Quantum Matter: Dynamics and Sensors Conference, University of Connecticut — Storrs, CT'
+    - 29 Nov 2022 — Dynamical entanglement transition in the probabilistic control of chaos — QuILT day 2022, University of New Orleans — New Orleans, LA
+    - 27 September 2022 — Using feedback in monitored dynamcis to reveal entangled and controlled phases — CRC Workshop on Monitored Quantum Systems — Cologne, Germany
+    - 14 March 2022 — A moiré superlattice on the surface of a topological insulator — March meeting 2022 — Chicago, IL
+    - 2 December 2021 — Criticality and multifractality in continuously-monitored random quantum circuits — Quantum Information Technologies in Louisiana Day (QuILT), Baton Rouge — LA
+    - 12 June 2023 - 23 June 2023 — Measurement and feedback-driven entanglement transition in the probabilistic control of chaos — PERIODICALLY AND QUASI-PERIODICALLY DRIVEN COMPLEX SYSTEMS, International Centre for theoretical sciences — Bangaluru, India
+    - '20 October 2017 — The Amazing triviality and Richness of Two-Dimensional Quantum Field Theory: Finite Universes — Workshop: Entropy: From lasers and Bose condensates to Unruh radiation and black holes, Texas A&M University — College Station, TX'
+    - 'June 2011 — Lie Algebraic approaches to quantum dynamics: The breakdown of the coherent state path integral and the Bose-Hubbard model — Conference: Lie Theory and Its Applications in Physics — Varna, Bulgaria'
+    - '15 March 2007 — The Method of Images on a Quantum Graph — Conference: Quantum Graphs, their Spectra and Applications, Newton Institute — Cambridge, U.K.'
+  - title: 'Invited: colloquia'
+    items:
+    - '9 January 2025 — The many faces of the Casimir Force: Electronic polarization and the vacuum energy of photons — Departmental Colloquium: Department of Physics, University of Santa Cruz — CA'
+    - '6 November 2024 — Exploring Low-Energy Systems by Analogy to the Geometry of Spacetime — Departmental Colloquium: Department of Physics, City College of New York — NY'
+    - 6 May 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Colloquium for Dept. of Physics & Center for Computation and Technology, Louisiana State University — Baton Rouge, Louisiana
+    - 26 March 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Colloquium for Dept. of Physics, University of Alabama Birmingham — Birmingham, Alabama
+    - 24 March 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Colloquium for Dept. of Physics, City College of New York — New York City, New York
+    - 17 March 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Colloquium for Dept. of Physics, California State University, Long Beach — CA
+    - 24 Oct 2022 — Moiré materials and incommensurability in two-dimensional systems — Tulane colloquium — New Orleans, LA
+  - title: 'Invited: departmental seminars'
+    items:
+    - '31 March 2025 — Measurement and Feedback Driven Adaptive Dynamics in the Classical and Quantum Kicked Top — Departmental Seminar: Department of Physics & Astronomy, Michigan State University — East Lansing, MI'
+    - '14 November 2024 — From Multifractal Wave Functions to Superconductivity: Understanding Anderson Transitions in Incommensurate Moiré Systems — Departmental Seminar: Department of Physics, Rutgers — NJ'
+    - 11 November 2024 — Measurement- and feedback-driven entanglement transitions in the probabilistic control of chaos — Graduate Center Physics Seminar, City University of New York — NY
+    - '12 February 2024 — Measurement-induced entanglement and control transitions using feedback — Departmental seminar: Department of Physics, Berkeley — CA'
+    - '5 October 2023 — Measurement and feedback-driven entanglements transition in the probabilistic control of chaos — Department Seminar: Department of Physics, Rice — Houston, TX'
+    - 11 November 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Special Condensed Matter Seminar, Dept. of Physics, Iowa State University — Ames, Iowa
+    - 21 October 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Condensed Matter Seminar, Dept. of Physics, University of Cologne — Cologne, Germany
+    - 18 October 2021 — Criticality and multifractality in continuously-monitored random quantum circuits — Quantum Optics group seminar, Sorbonne University — Paris, France
+    - 14 October 2021 — Incommensurability-driven phases, flat bands, and topology in two-dimensional materials — Seminar, Max Planck Institute for Solid State Research — Stuttgart, Germany
+    - 19 August 2020 — Moiré materials and incommensurability in two-dimensional systems — Virtual Colloquium for the Dept. of Physics, Cinvestav — Mexico City, Mexico
+    - 5 May 2020 — Analog spacetimes from nonrelativistic Goldstone modes in flowing spinor condensates — Inter-University remote Department seminar — Stockholm, Sweden
+    - '6 December 2019 — Incommensurate transitions and twist disorder in microscopic models of twisted bilayer graphene — Department Seminar: Stony Brook University — Stony Brook, NY'
+    - '7 October 2019 — Incommensurate Transitions and Twist Disorder in Microscopic Models of Twisted Bilayer Graphene — Department Seminar: Department of Physics, Rice — Houston, TX'
+    - '13 March 2019 — Dynamic spacetimes in flowing spinor condensates — Invited talk: Snapshots in Quantum Dynamics, City University of New York — New York, NY'
+    - '18 October 2018 — Magic-angle semimetals — Special Seminar: Condensed Matter Theory Center, University of Maryland — College Park, MD'
+    - '1 May 2017 — Remnant Geometric Hall Response in a Quantum Quench — Special Seminar: Department of Physics, University of Maryland — College Park, MD'
+    - '20 April 2017 — Remnant Geometric Hall Response in a Quantum Quench — Department Seminar: Department of Physics, Rice — Houston, TX'
+    - '14 April 2017 — Quantum phases of disordered three-dimensional Majorana-Weyl fermions — Department Seminar: Department of Physics, Texas A&M University — College Station, TX'
+    - '12 April 2017 — Multipartite entanglement and harmonic analysis on complex projective spaces — Department Seminar: Department of Mathematics, Texas A&M University — College Station, TX'
+    - '6 April 2017 — Remnant Geometric Hall Response in a Quantum Quench — Department Seminar: Department of Physics, University of Texas — Austin, TX'
+    - '11 January 2017 — Quantum phases of disordered three-dimensional Majorana-Weyl fermions — Department Seminar: Department of Physics, Weizmann Institute of Science — Rehovot, Israel'
+    - '7 December 2012 — Entanglement and the Hilbert-Schmidt distance — Department Seminar: Department of Physics, Boston University — Boston'
+    - '2 November 2007 — Generalized Method of Images on Quantum Graphs — Departmental Seminar: Department of Mathematics, Texas A&M University — Texas'
+  - title: Contributed
+    items:
+    - March 2025 — Measurement- and feedback-driven adaptive dynamics in classical and quantum kicked top — APS Summit 2025 — Anaheim, CA
+  - title: Contributed
+    items:
+    - March 2024 — Localized defect states within the bands of bilayer graphene — APS March Meeting — Minneapolis, MN
+  - title: Contributed
+    items:
+    - October 2021 — A moiré superlattice on the surface of a topological insulator — Real-space simulations of topological matter and disordered materials, IOP Conference, CMD 29 online series
+  - title: Contributed
+    items:
+    - August 2021 — Analogue Spacetimes from Nonrelativistic Goldstone Modes in Spinor Condensates — MCPG10 nouveaux défis pour la gravité analogue? Une passerelle entre matière condensée et relativité générale, JMC virtual conference
+  - title: Contributed
+    items:
+    - March 2021 — A moiré superlattice on the surface of a topological insulator — APS March Meeting — Virtual Conference
+  - title: Contributed
+    items:
+    - March 2019 — Strong correlations in magic-angle semimetals — APS March Meeting — Boston, MA
+  - title: Contributed
+    items:
+    - March 2018 — Do the surface Fermi arcs in Weyl semimetals survive disorder? — APS March Meeting — Los Angeles, CA
+  - title: Contributed
+    items:
+    - March 2017 — Quantum phases of disordered three-dimensional Majorana-Weyl fermions — APS March Meeting — New Orleans, LA
+  - title: Contributed
+    items:
+    - March 2016 — Persistent Hall response after a quantum quench in Dirac systems — APS March Meeting — Baltimore, MD
+  - title: Contributed
+    items:
+    - March 2015 — Repulsive Casimir effect between Weyl semimetals — APS March Meeting — San Antonio, TX
+  - title: Contributed
+    items:
+    - March 2014 — Optics of midgap impurity states on a surface of a topological insulator — APS March Meeting — Denver, CO
+  - title: Contributed
+    items:
+    - March 2013 — Quantum geometry and entanglement in the Rabi model — APS March Meeting — Baltimore, MD
+  - title: Contributed
+    items:
+    - 28 February 2012 — A Lie-algebraic approach to decoherence in a quantum spin system — APS March Meeting — Boston, MA
+  - title: Contributed
+    items:
+    - 'March 2011 — Breakdown of the coherent state path integral: two simple examples — APS March Meeting — Dallas, TX'
+  - title: Contributed
+    items:
+    - March 2010 — Path integral representation of a two qubit system — APS March Meeting — Portland, OR
+  - title: Contributed
+    items:
+    - 'September 2007 — Vacuum Energy in Quantum Graphs — Conference: Quantum Field Theory Under the Influence of External Conditions, Universität Leipzig — Germany'

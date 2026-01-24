@@ -1,0 +1,47 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#9}
+\date{Due: 15 November 2022}
+
+\begin{document}
+
+\problem{[20pts] Runge-Lenz vector redux}
+
+Consider a particle in \textbf{three dimensions} moving under the action of the Kepler potential $V(r)=-\frac kr$.
+Show that the Runge-Lenz vector
+\begin{equation}
+  \label{eq:1}
+  \mathbf A = \mathbf p \times \mathbf L - \frac{m k \mathbf r}{r},
+\end{equation}
+is an integral of motion (i.e., $\{ \mathbf A, H\} = 0$).
+
+\problem{[20 pts] Generators of canonical transformations}
+
+Consider a mechanical system with one degree of freedom.
+Obtain the generating function $F_{3}(p,Q)$ that generates the same canonical transformation as $F_{2}(q,P)= q^{2} e^{P}$.
+
+\problem{[20 pts] Building canonical transformations}
+
+Let
+\begin{equation}
+  \label{eq:2}
+  Q_{1} = q_{1}^{2}, \quad Q_{2} = q_{1} + q_{2}, \quad P_{i} = P_{i}(q_{j},p_{j}), \quad i=1,2
+\end{equation}
+be a canonical transformation of a system with two degrees of freedom.
+\begin{enumerate}
+  \item Complete the transformation by finding \emph{the most general} expression for the $P_{i}$'s.
+  \item Find \emph{a particular} choice of the $P_{i}$'s that will reduce the Hamiltonian
+        \begin{equation}
+          \label{eq:3}
+          H(q_{i},p_{i}) = \left(\frac{p_{1}-p_{2}}{2q_{1}}\right)^{2} + p_{2} + (q_{1} + q_{2})^{2}
+        \end{equation}
+        to
+        \begin{equation}
+          \label{eq:4}
+         H_{\mathrm{new}}(Q_{i},P_{i}) = P_{1}^{2} + P_{2}.
+        \end{equation}
+  \item Use $H_{\mathrm{new}}(Q_{i},P_{i})$ to solve for $q_i(t)$.
+\end{enumerate}
+
+\end{document}

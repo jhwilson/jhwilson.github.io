@@ -1,0 +1,77 @@
+\documentclass{jhwhw}
+
+\author{}
+\title{PHYS 7364 -- Homework \#1}
+\date{21 January 2022}
+
+\begin{document}
+
+\problem{Correlation and Exchange Potential}
+
+As discussed in class, the general Hamiltonian for electrons in a system of static nuclei is given by
+\begin{equation}
+  \label{eq:1}
+  H = \sum_{i} \left[ \frac{\mathbf{p}_{i}^{2}}{2m} + V_{\mathrm{ext}}(\mathbf r_{i}) \right] + \frac12\sum_{i\neq j} \frac{e^{2}}{|\mathbf r_{i} - \mathbf r_{j}|}.
+\end{equation}
+In this problem, we will explore this Hamiltonian for the relatively simple problem of H$_{2}$ in order to identify the classical and nonclassical effects of spin.
+In this problem, the nuclei are separated along a particular axis  $\mathbf d = d \hat{\mathbf z}$, and we will assume that we have solved the single-particle problem, finding that the most important low-energy orbitals are symmetric and anti-symmetric combinations of s-orbitals
+\begin{equation}
+  \label{eq:2}
+\chi_{\pm}(\mathbf r) = \mathcal N_{\pm}( \psi_{L}(\mathbf r)\pm\psi_{R}(\mathbf r ) ), \quad \psi_{L}(\mathbf r ) = \psi_{s}(\mathbf r - \mathbf d/2), \quad \psi_{R}(\mathbf r) = \psi_{s}(\mathbf r + \mathbf d/2).
+\end{equation}
+By assumption, these solve $(\frac{\mathbf p^{2}}{2m}+ V_{\mathrm{ext}}(\mathbf r))\chi_{\pm}(\mathbf r) = E_{\pm}\chi_{\pm}(\mathbf r)$, and we define $2t = E_{-}-E_{+}>0$. With spin, there are four states $\chi_{\pm}(\mathbf r) \ket{\uparrow}$ and $\chi_{\pm}(\mathbf r)\ket{\downarrow}$.
+
+
+\begin{enumerate}
+  \item Assuming $\psi_{s}(\mathbf r) \propto e^{-\mathbf r^{2}/(4 a_{0}^{2})}$, find the normalizations $\mathcal N_{\pm}$. {\bf Note: s-orbitals do not have this form, we are only assuming this for convenience.}
+  \item If $\chi_{\pm}(\mathbf r) \ket{\uparrow}$ and $\chi_{\pm}(\mathbf r)\ket{\downarrow}$ are the only relevant single-particle wavefunctions, write down all two-particle, fermionic wavefunctions (be mindful of the spin degree of freedom). What is the Hilbert-space dimension of this two-particle space?
+  \item In the above two-particle basis, what are the matrix elements of the single-particle part of the Hamiltonian? $H = \frac1{2m}\mathbf p_{1}^{2}+ V_{\mathrm{ext}}(\mathbf r_{1}) + \frac1{2m}\mathbf p_{2}^{2} + V_{\mathrm{ext}}(\mathbf r_{2})  $
+  \item Write down the integral expressions for the matrix elements of the interaction term $e^{2}/|\mathbf r_{1}-\mathbf r_{2}|$ in the same basis (in terms of $\chi_{\pm}(\mathbf r)$). Which ones are zero? Which terms do you expect to be large? Note that on the diagonal, some terms are proportional to densities and others have wavefunctions \emph{exchanged}.  ({\bf Hint:} It may be useful to transform your basis from Part (b) into one that is purely symmetric or antisymmetric in the spin-basis.)
+  \item Without evaluating the integrals, what can we say about the \emph{spin configuration} of the ground state?
+\end{enumerate}
+
+\problem{Spin-orbit coupling}
+
+If we treat our electrons relativistically, electrons obey the 4$\times$4 Dirac Hamiltonian
+\begin{equation}
+  \label{eq:3}
+  H_{D} =
+  \begin{pmatrix}
+    mc^{2} + V(\mathbf r) & (c \mathbf p - e\mathbf A) \cdot \bm \sigma \\
+    (c\mathbf p - e\mathbf A) \cdot \bm \sigma & -mc^{2} + V(\mathbf r)
+  \end{pmatrix}, \quad V(\mathbf r) = - e \phi(\mathbf r).
+\end{equation}
+In this problem, we will derive the low-energy Hamiltonian with relativistic corrections
+\begin{enumerate}
+  \item Given $\Psi = ( \psi_{\mathrm{e}} \;\psi_{\mathrm{p}} )^{T}$ for two-component spinors $\psi_{\mathrm{e}}$ and $\psi_{\mathrm{p}}$ and $H_{D} \Psi = E \Psi$, find an equation for the electrons $\psi_{\mathrm{e}}$ and expand it assuming $c$ is large, keeping terms up to $1/c^{2}$.
+  \item Assume that the potential term is only dependent on the radius. Show that the spin-orbit coupling term derived in Part (a) takes the form
+        \begin{equation}
+          \label{eq:4}
+          h_{\mathrm{SOC}} = \xi(r) \mathbf L \cdot \mathbf S, \quad \mathbf S = \frac12 \bm \sigma,
+        \end{equation}
+       and evaluate what $\xi(r)$ is in terms of $\phi(r)$.
+  \item Assume that $\phi(r) = Z e/ r$, and evaluate $\braket{h_{\mathrm{SOC}}}$ for wave functions with principle quantum number $n$, angular momentum $\ell$, total angular momentum $j$, and spin $s$. (Hint: $\braket{1/r^{3}} = 2 Z^{3}/(a_{0}^{3} n^{3} \ell (\ell + 1)(2\ell + 1))$ for the Bohr radius $a_{0}$). What does this begin to tell us about the elements $Z$ for which this term is relevant? In a material like Bi$_{2}$Se$_{3}$ ``spin-orbit coupling is important,'' but which atom's spin-orbit coupling?
+\end{enumerate}
+
+\problem{Delta function lattice and edge states}
+
+Crystals have bulk states and if there is a boundary, they can have \emph{edge} states.
+Edge states are important for topology, but their sole existence is not a proof of topology, as we illustrate in this problem.
+We will remain in one-dimension for this problem.
+
+\begin{enumerate}
+\item For a particle in the periodic potential of the form, $U(x) = \alpha \sum_{n=-\infty}^{\infty} \delta(x - n a)$ (this potential can be viewed as a model of an ideal one-dimensional ``crystal''), find a system of independent solutions of the Schroedinger equation for an arbitrary value of $E$ and determine the energy spectrum.
+  \item Find the energy spectrum and degeneracy of levels of a particle in the potential of the form
+        \begin{equation}
+          \label{eq:5}
+          U(x) =
+          \begin{cases}
+            \alpha \sum_{n=1}^{\infty} \delta(x - na), & x>0,\\
+            U_{0}>0, & x\leq 0.
+          \end{cases}
+        \end{equation}
+    Compare your results from Part (a). Pay special attention to the appearance of states, localized near the boundary of the crystal. These states, you will find, are called \emph{surface} or \emph{Tamm} states, and they plan an important role in semiconductor physics.
+\end{enumerate}
+
+
+\end{document}

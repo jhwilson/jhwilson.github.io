@@ -1,0 +1,41 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#8}
+\date{Due: 8 November 2022}
+
+\begin{document}
+
+\problem{[20 pts] Moving pendulum}
+
+The point of suspension of a simple pendulum of length $\ell$ and mass $m$ is constrained to move on a parabola described by $z = \kappa x^{2}$ with constant $\kappa$ and located in the vertical plane ($y = 0$). Derive the Hamiltonian governing the motion of the pendulum from the Lagrangian. Obtain Hamilton's equations.
+
+\problem{[20 pts] Multiple integrals of motion}
+
+Consider a system with Hamiltonian $H = q_{1} p_{1} - q_{2} p_{2} - a q_{1}^{2} + b q_{2}^{2}$ where $a$ and $b$ are real numbers. Show that the functions $f_{1} = (p_{2} - b q_{2})/ q_{1}$ and $f_{2} = q_{1}q_{2}$ are integrals of motion. Verify that their Poisson bracket is another constant of the motion (Poisson's theorem).
+
+\problem{[20 pts] Canonical transformations}
+
+Show that the following coordinate transformation is a canonical transformation
+\begin{equation}
+  \label{eq:1}
+  Q = \arctan\left(\frac{\alpha q}{p} \right), \quad P = \frac{\alpha q^{2}}2\left( 1 + \frac{p^{2}}{\alpha^{2} q^{2}}\right).
+\end{equation}
+where $\alpha$ is a real number.
+
+\problem{[20 pts] Canonical transformations in action}
+
+Show that the following coordinate transformation of a system with two degrees of freedom (i.e., a four-dimensional phase space) is a canonical transformation
+\begin{align}
+  \label{eq:2}
+  x & = \frac1{\alpha} ( \sqrt{2 P_{1}} \sin Q_{1} + P_{2} ), & y = \frac1{\alpha}( \sqrt{2 P_{1}} \sin Q_{1} + Q_{2} ) \\
+  p_{x} & = \frac \alpha 2( \sqrt{2 P_{1}} \sin Q_{1} - Q_{2} ), & p_{y} = - \frac{\alpha}2 ( \sqrt{2 P_{1}} \sin Q_{1} - P_{2} )
+\end{align}
+Apply this canonical transformation to a particle of charge $e$ moving in a the $xy$-plane orthogonal to the magnetic field $\mathbf B = B \hat{\mathbf z}$, where $\alpha^2 = \frac{e B}{c}$ and solve the equations of motion.
+
+\emph{Hint:} You know the form of the Hamiltonian in terms of $x$, $y$, $p_{x}$, and $p_{y}$ from in class and in the previous homework.
+What you need to do is to change to the new variables $Q_{1}$, $Q_{2}$, $P_{1}$, and $P_{2}$.
+You will find that the system can be solved quite easily using these variables (this is an example of how useful canonical transformations are for solving the equations of motion).
+Once you find the solution in terms of $Q_{1}$, $Q_{2}$, $P_{1}$, and $P_{2}$, undo the change to write it in terms of the original coordinates $x$, $y$, $p_{x}$, and $p_{y}$.
+
+\end{document}

@@ -1,0 +1,97 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#4 \& \#5}
+\date{Due: 4 October 2022}
+
+\begin{document}
+
+\noindent This is the next two weeks of homework, each will be graded as their own assignments.
+\begin{itemize}
+  \item HW4 (60 pts): Problems 1,2,3
+  \item HW5 (60 pts): Problems 4,5,6
+\end{itemize}
+
+\problem{[20pts] Hidden symmetry in Kepler's problem}
+
+Consider the one-particle Kepler's problem
+\begin{equation}
+  \label{eq:1}
+  L = \frac12 \mu \dot {\mathbf r}^{2} + \frac{k}r, \quad k>0.
+\end{equation}
+\begin{enumerate}
+  \item Prove that the Laplace-Runge-Lenz vector
+        \begin{equation}
+          \label{eq:2}
+          \mathbf A = \mathbf p \times \mathbf L - \frac{k \mu \mathbf r}r,
+        \end{equation}
+        is a constant of the motion, where $\mathbf p$ and $\mathbf L$ are the linear and angular momenta, respectively.
+        Since $\mathbf A$ is a vector and $\partial \mathbf A/ \partial t = 0$, we have three first integrals of motion.
+  \item Show that the equation of the orbit ($1/r$ as a function of $\theta$) can be easily derived from $\rdf{\mathbf A}{t} = 0$.
+  \item Find 5 independent integrals of motion of the problem.
+  \item (BONUS: 10 pts) Show the symmetry of the Lagrangian that leads to the Laplace-Runge-Lenz vector and prove $\mathbf A$ is a constant of the motion using Noether's theorem.
+\end{enumerate}
+
+\problem{[20 pts] The geometry of Kepler's problem}
+Consider the Kepler problem as discussed in class
+\begin{enumerate}
+  \item Write the radius of the circular orbit as a function of the angular momentum.
+  \item Show that in an elliptical orbit, the semi-major axis $a$ can be written as $a = - k / E$ (recall that $E<0$ for an elliptical trajectory).
+        Show that the eccentricity can be written as $e = \sqrt{1 - \frac{\ell^{2}}{\mu k a}}$.
+        Use this relation to re-write the equation of the orbit as
+        \begin{equation}
+          \label{eq:3}
+          r = \frac{a(1 - e^{2})}{1 + e \cos(\theta - \theta_{0})}
+        \end{equation}
+\end{enumerate}
+
+\problem{[20 pts] The Yukawa potential}
+Consider the Yukawa potential
+\begin{equation}
+  \label{eq:4}
+  V(r) = - \frac{k}{r} \exp(- r/a),
+\end{equation}
+with $a$ and $k$ positive real numbers (otherwise known as the screened Coulomb potential).
+This potential approximates Newton's potential at short distances $r\ll a$, but approaches zero faster than any power law at long distances (physically, imagine a cloud of positive charge that shields the negative charge in the middle).
+\begin{enumerate}
+  \item Write the equations of motion for the radial dynamics. Use the effective potential to discuss the quantitative nature of the orbits for different values of the energy and the angular momentum
+  \item Find for what values of the angular momentum there exist circular orbits and compute their energy.
+\end{enumerate}
+
+\problem{[20 pts] Sudden collapse}
+
+Two particles of mass $m_{1}$ and $m_{2}$ move in circular orbit around each other under the influence of gravity.
+The period of the motion is $T$.
+They are suddenly stopped (i.e., $\dot {\mathbf r} = 0$) then released after which they fall towards each other.
+If the objects are treated as point particles, find the time it takes for the particles to collide in units of $T$.
+
+\problem{[20 pts] Central power laws}
+
+A particle of mass $m$ moves in a force field given by a potential energy $V = K r^{s}$, where both $K$ and $s$ may be positive or negative.
+\begin{enumerate}
+  \item For what values of $K$ and $s$ do stable circular orbits exist?
+  \item What is the relation between the period $\tau$ and the radius $R$ of these circular orbits?
+\end{enumerate}
+
+\problem{[20 pts] Rutherford cross section}
+
+Consider the repulsive Coulomb potential $V(r) = \frac{k}r$ with $k>0$.
+\begin{enumerate}
+  \item Show that the equation of the orbit is
+        \begin{equation}
+          \label{eq:5}
+          \frac{1}r = - \frac{m k}{\ell^{2}}(1 + e \cos(\theta - \theta_{0})),
+        \end{equation}
+        where $e = \sqrt{1 + \frac{2 E \ell^{2}}{m k^{2}}}$. Discuss what subset of conic sections these trajectories correspond to.
+        Plot the form of the trajectory for $\theta_{0} = \pi$.
+  \item Show that $\cos \Psi = \frac1e$ where $\Psi$ is the angle of the direction defined by the incoming particle.
+  \item Show that $\cot(\Theta/2) = \frac{2 b E}{k}$ where $\Theta$ is the scattering angle (i.e., the angle between the incoming and outgoing diretions of the scattered particle) and $b$ is the \emph{impact parameter}.
+  \item Show that
+        \begin{equation}
+          \label{eq:6}
+          \sigma(\Theta) = \frac{k^{2}}{16 E^{2}} \csc^{4}(\Theta/2).
+        \end{equation}
+        This is the \emph{Rutherford cross section} that E.~Rutherford used to discover the internal structure of atoms.
+\end{enumerate}
+
+\end{document}

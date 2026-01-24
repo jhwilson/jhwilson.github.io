@@ -1,0 +1,72 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#3}
+\date{Due: 20 September 2022}
+
+\begin{document}
+
+\problem{[20 pts] Momentum conservation}
+
+Consider a particle with electric charge $q$ moving in the electrostatic field produced by each of the four charge configurations described below. What components of the particle linear momentum $\mathbf p = m \mathbf v$, and of the particle angular momentum $\mathbf L = \mathbf r \times \mathbf p$ will be conserved in each case?
+\begin{enumerate}
+  \item An infinite plane of charge, located on the plane $z = 0$.
+  \item A semi-infinite homogeneous plane $z = 0$ and $y > 0$.
+  \item An infinite homogeneous solid charged cylinder, with its axis along the $y$-axis.
+  \item A finite homogeneous solid charged cylinder, with its axis along the $y$-axis, and its center at the origin.
+  \item A homogeneous circular torus, with its axis along the $z$-axis.
+\end{enumerate}
+
+\problem{[20 pts] A system with one degree of freedom is described by the Lagrangian}
+\begin{equation}
+  \label{eq:27}
+  L =  \frac12 m \dot x^{2} - \frac{k}{x^{2}}.
+\end{equation}
+Consider the transformation
+\begin{equation}
+  \label{eq:1}
+  x(t) \mapsto e^{- \epsilon / 2} x( e^{\epsilon} t ).
+\end{equation}
+\begin{enumerate}
+  \item Show that the infinitesimal version of this transformation is
+        \begin{equation}
+          \label{eq:2}
+          \begin{aligned}
+            \delta x(t) & = \left( t \dot x(t) - \frac12 x(t) \right) \epsilon \\
+              \delta \dot x(t) & = \left( t \ddot x(t) + \frac12 \dot x(t) \right) \epsilon
+          \end{aligned}
+        \end{equation}
+  \item Show that this transformation is a symmetry of the Lagrangian and obtain the associated constant of motion $Q$.
+  \item Check your result, i.e., show that $dQ/dt = 0$ when evaluated with the solutions of the equations of motion.
+\end{enumerate}
+
+\problem{[20 pts] Particle in electromagnetic field}
+
+Consider the Lagrangian of a non-relativistic particle of mass $m$ and electric charge $q$ in an electromagnetic field
+\begin{equation}
+  \label{eq:3}
+  L = \frac12 m \dot{\mathbf r}^{2} - q \phi + \frac{q}{c} \dot{\mathbf r } \cdot \mathbf A,
+\end{equation}
+where $\phi(t, \mathbf r)$ and $\mathbf A(t, \mathbf r)$ are the electromagnetic potentials, in terms of which the components of the electric and magnetic fields can be written as
+\begin{equation}
+  \label{eq:4}
+  E_{i} = -\partial_{i} \phi - \frac1c \partial_{t} A_{i}, \quad B_{i} = \epsilon_{ijk} \partial_{j} A_{k},
+\end{equation}
+where $\partial_{i} \equiv \partial/ \partial x_{i}$ and $\epsilon_{ijk }$ is the totally antisymmetric symbol (Levi-Civita symbol).
+\begin{enumerate}
+  \item Write the Euler-Lagrange equations and show that they reproduce the Lorentz force
+        \begin{equation}
+          \label{eq:5}
+          m \ddot{\mathbf r} = q \mathbf E + \frac{q}{c} \dot{\mathbf r} \times \mathbf B,
+        \end{equation}
+  \emph{Hint:} Use the identity $\epsilon_{ijk}\epsilon_{kmn} = \delta_{im} \delta_{jn} - \delta_{in} \delta_{jm}, $ where $\delta_{ij}$ is the Kronecker delta. You will need to use your ability to manipulate indices in this problem.
+  \item Solve the equations of motion for the case
+        \begin{equation}
+          \label{eq:6}
+          \phi = 0, \quad \mathbf A = - \frac12 \mathbf r \times \mathbf B,
+        \end{equation}
+        with $\mathbf B = (0,0,B)$ in Cartesian coordinates and $B$ is a constant.
+  \item Show that the rotations around the $z$-axis are a symmetry of the Lagrangian, and obtain the associated conserved quantity. Use again $\mathbf B = (0,0,B)$.
+\end{enumerate}
+
+\end{document}

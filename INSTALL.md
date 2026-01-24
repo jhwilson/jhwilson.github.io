@@ -131,6 +131,37 @@ $ bundle exec jekyll serve
 
 To see the template running, open your browser and go to `http://localhost:4000`. You should see a copy of the theme's [demo website](https://alshedivat.github.io/al-folio/). Now, feel free to customize the theme however you like. After you are done, remember to **commit** your final changes.
 
+## Syncing external CV data into this site
+
+This repository includes a helper script to pull CV/publication data from an external “source of truth” folder and regenerate the Jekyll inputs used by this site.
+
+- **Script**: `bin/sync_cv_data.py`
+- **Default source folder**: `/Users/justin/R50_Research/40-49_Admin/44_Job_Application_Material/44.01_CV/data`
+- **Outputs updated in this repo**:
+  - `_data/cv.yml`
+  - `_data/socials.yml` (subset: email/github/orcid)
+  - `_bibliography/papers.bib`
+  - `_pages/publications.md` (front matter `years`)
+
+Run it like:
+
+```bash
+# (optional) set the source folder if it’s not the default
+export CV_DATA_DIR="/path/to/44.01_CV/data"
+
+# sync and write changes into the repo
+python3 bin/sync_cv_data.py
+
+# dry-run: exit non-zero if changes would be made
+python3 bin/sync_cv_data.py --check
+```
+
+If you don’t have the Python dependencies installed yet:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Deployment
 
 Deploying your website to [GitHub Pages](https://pages.github.com/) is the most popular option.

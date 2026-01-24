@@ -1,0 +1,96 @@
+\documentclass{jhwhw}
+
+\usepackage{amsfonts}
+\usepackage{listings}
+
+\DeclareMathOperator{\Rer}{Re}
+\DeclareMathOperator{\Imr}{Im}
+
+\author{}
+\title{PHYS 7364 -- Homework \#4}
+\date{1 March 2022}
+
+\begin{document}
+
+\problem{Edge states in the SSH chain}
+
+In this problem we will explicitly consider both an semi-infinite chain as well as a finite chain to understand both edge states and their splitting
+
+For the semi-infinite chain, the SSH Hamiltonian takes the form
+\begin{equation}
+  \label{eq:4}
+  H = \sum_{n=1}^{\infty} (t_{1} \ket{n,A}\bra{n,B} + t_{2}\ket{n+1,A}\bra{n,B} + \mathrm{h.c.}).
+\end{equation}
+\begin{enumerate}
+  \item Let $\ket{\psi} = \sum_{n}( \psi_{n,A} \ket{n,A} + \psi_{n,B}\ket{n,B})$ and evaluate $H \ket{\psi} = E \ket{\psi}$ to obtain a recurrence relation for $\psi_{n,A}$ and $\psi_{n,B}$.
+  \item Derive a (normalizeable) solution for $E=0$. Plot $|\psi_{n,A}|^{2}$ and $|\psi_{n,B}|^{2}$ vs. $n$. What conditions are needed for it to be normalizeable?
+\item Write the recurrence relations in such a way that you eliminate $\psi_{nA}$ (to obtain a recurrence relation solely in $\psi_{nB}$), and using the boundary condition $\psi_{0B} = 0$, solve the recurrence relations (Recall that if $a_{n+2} = p a_{n+1} + q a_{n}$ that we can find two solutions with $a_{n} =c \lambda_{1}^{n} + b \lambda_{2}^{n}$). We require normalization so $|\psi_{nB}|\rightarrow 0 $ as $n\rightarrow\infty$, this will restrict $|\lambda_{j}|\leq 1$ --- in fact you should find that for $E>0$, $|\lambda_{j}|=1$. If we let $E=0$, can we recover the solution from part (b)? Why or why not?
+  \item Lastly, consider now the finite chain
+        \begin{equation}
+          \label{eq:5}
+  H = \sum_{n=1}^{L} (t_{1} \ket{n,A}\bra{n,B} + t_{2}\ket{n+1,A}\bra{n,B} + \mathrm{h.c.}).
+        \end{equation}
+        Argue or compute what the edge state localized at $L$ looks like based on what you found in part (b). Approximate the $n=1$ edge state with $\ket{\mathrm{Left}} = \sum_{n=1}^{L}( \psi_{nA} \ket{n, A} + \psi_{nB} \ket{nB})$ ($\psi_{nA}$ and $\psi_{nB}$ coming from your part (b) solution) and similarly for the edge state localized at $L$, which we call $\ket{\mathrm{Right}}$. With these edge states, compute the effective Hamiltonian
+        \begin{equation}
+          \label{eq:6}
+          H_{\mathrm{edge}} =
+          \begin{pmatrix}
+            \braket{\mathrm{Left}|H|\mathrm{Left}} &
+            \braket{\mathrm{Left}|H|\mathrm{Right}} \\
+            \braket{\mathrm{Right}|H|\mathrm{Left}} &
+            \braket{\mathrm{Right}|H|\mathrm{Right}}
+          \end{pmatrix}.
+        \end{equation}
+        What are the eigenstates and what is the effective gap between them?
+\end{enumerate}
+
+\problem{Modified Bulk SSH model}
+
+Consider the usual SSH Hamiltonian
+\begin{equation}
+  \label{eq:7}
+  H_{0} = \sum_{n=-\infty}^{\infty} (t_{1} \ket{n,A}\bra{n,B} + t_{2}\ket{n+1,A}\bra{n,B} + \mathrm{h.c.}),
+\end{equation}
+but with an added term
+\begin{equation}
+  \label{eq:8}
+  V = t' \sum_{n=-\infty}^{\infty} \left(i\ket{n+1,A}\bra{n,A} - i \ket{n,A}\bra{n+1,A}\right)
+\end{equation}
+
+\begin{enumerate}
+  \item For the full Hamiltonian $H = H_{0} + V$ what symmetries remain in this Hamiltonian (list the symmetries of $H_{0}$ and indicate which ones $V$ breaks and which ones it preserves)? What is its topological classification ($0$, $\mathbb Z_{2}$, or $\mathbb Z$)?
+  \item Find the $k$-space Hamiltonian for $H = H_{0} + V$ and cast it into the form $H = \epsilon(k) + \mathbf d(k) \cdot \bm \sigma$. What are its eigenenergies?
+  \item Compute the polarization of the bottom band.
+\end{enumerate}
+
+
+\problem{The quantum Hall effect with spin}
+
+Electrons have spin and that directly interacts with a magnetic field.
+In this problem, we will explore the implications of that.
+\begin{enumerate}
+  \item First, assuming a magnetic field in the $\mathbf B = B\hat{\mathbf z}$ in a two-dimensional electron gas.
+  Using your favorite gauge, find the eigenstates and eigenenergies of the Pauli Hamiltonian
+        \begin{equation}
+          \label{eq:1}
+          H_{\mathrm{P}} = \frac1{2m}\left(\mathbf p -\frac{e}{c}\mathbf A \right)^{2} - \frac{e}{2mc} \mathbf B \cdot \bm{\sigma}.
+        \end{equation}
+    In particular, note how spin changes things: What is the degeneracy of each Landau level (make your space finite in whichever way is convenient for your gauge so that you have a total flux $\Phi$ through the system)? How has the inclusion of spin changed this?
+  \item Define an operator $Q_{1} = \frac{1}{\oldsqrt{4m}}\inp{\mathbf p - \frac{e}c \mathbf A} \cdot \bm \sigma$, and show that $H_{\mathrm P}= 2 Q_{1}^{2}$. and show that if you have an eigenstate $\ket{\psi_{E}}$ then $\ket{\psi_{E}'} = \sqrt{2/E}Q_{1} \ket{\psi_{E}}$ is also an eigenstate (in general or for this specific problem). $Q_{1}$ is known as a \emph{supercharge}.
+  \item \emph{Complex supercharge}. Let the vector potential be $\mathbf A = (A_{x}(\mathbf r) , A_{y}(\mathbf r) , 0)$ (with $\mathbf A$ independent of $z$; don't specify the gauge any further), and define
+        \begin{equation}
+          \label{eq:2}
+          A = \frac{1}{\sqrt{2m}}\left[\left(p_{x} - \frac{e}{c}A_{x}\right) - i \left(p_{y} - \frac{e}{c} A_{y}\right)\right], \quad
+          Q = (\sigma_{x} + i \sigma_{y})A.
+        \end{equation}
+        Compute $Q^{2}$, $\{Q, Q^{\dagger}\}$, and $[A, A^{\dagger}]$. (Recall that the cyclotron frequency is $\omega_{c} = \frac{eB}{mc}$.)
+  \item Write the Hamiltonian in the basis of spin $\uparrow$ and spin $\downarrow$, and purely in terms of $A$ and $A^{\dagger}$. Specifically, show that the partially projected operators $\braket{\uparrow | H_{\mathrm P} |\uparrow} = A^{\dagger}A$ and $\braket{\downarrow| H_{\mathrm P} | \downarrow} = A A^{\dagger}$ in terms of $A$ and $A^{\dagger}$. These expressions are said to be \emph{isospectral} in that the spectrum of both are the same except at zero energy. In particular, something called an \emph{index theorem} relates them:
+        \begin{equation}
+          \label{eq:3}
+          (\text{\# of zeros of $A^{\dagger}A$}) - (\text{\# of zeros of $AA^{\dagger}$}) = \Delta
+        \end{equation}
+      What is the index $\Delta$ in this problem? (\emph{Hint}: Don't forget the degeneracy from part (a))
+  \item Given a chemical potential $\mu = \epsilon_{\mathrm F} = \frac52 \omega_{c}$ what is the magnetization $M = \braket{\sigma_{z}} = \sum_{E<\mu} \braket{\psi_{E} |\sigma_{z}|\psi_{E} }$? Relate this back to $\Delta$ from part (d).
+\end{enumerate}
+
+\end{document}

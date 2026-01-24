@@ -1,0 +1,167 @@
+\documentclass{jhwhw}
+
+\usepackage{listings}
+
+\author{}
+\title{PHYS 7364 -- Homework \#2}
+\date{28 January 2022}
+
+\begin{document}
+
+\problem{Gauge freedom in Bloch wave functions}
+
+Wave functions generally have a freedom of what is chosen in the phase.
+This is also true of Bloch wave functions $\psi_{n\mathbf k}(\mathbf r)$ which we explore here.
+Define a new set of Bloch wave functions by
+\begin{equation}
+  \label{eq:1}
+  \ket{\tilde \psi_{n\mathbf k}} = e^{-i\beta_{n}(\mathbf k)}\ket{\psi_{n\mathbf k}},
+\end{equation}
+where $\beta_{n}$ is a real function of $\mathbf k$. The transformation from the old set to the new set is what we will call a ``gauge transformation.''
+\begin{enumerate}
+  \item A ``periodic gauge'' is one for which $\ket{\psi_{n,\mathbf k+ \mathbf G}} = \ket{\psi_{n\mathbf k}}$ (i.e., equal with the same phase). What has to be true about $\beta_{n}(\mathbf k)$ if it is to preserve the periodicity of the gauge?
+  \item Show that the $\ket{u_{n\mathbf k}}$ transform in the same way as the $\ket{\psi_{n\mathbf k}}$ under a gauge transform. (recall $\psi_{n\mathbf k}(\mathbf r) = e^{i \mathbf k\cdot \mathbf r} u_{n\mathbf k}(\mathbf r)$ where $u_{n\mathbf k}(r)$ is periodic with respect to a lattice vector $\mathbf R$.)
+  \item We will soon be introducing the concept of ``Berry connection'' $\mathbf A_{n}(\mathbf k) = i \braket{u_{n\mathbf k} | \nabla_{\mathbf k} u_{n\mathbf k}}$. Derive an expression that describes how this transforms under a gauge transformation. That is, express $\tilde{\mathbf A}_{n}(\mathbf k) = i \braket{\tilde u_{n\mathbf k} | \nabla_{\mathbf k} \tilde u_{n\mathbf k}}$ in terms of $\mathbf A_{n}(\mathbf k)$ plus a correction.
+  \item Show that $\nabla_{\mathbf k} \times \mathbf A_{n}$ is gauge-invariant.
+\end{enumerate}
+
+\problem{Bloch's theorem, finite lattices, and flux}
+
+Consider a finite lattice given by
+\begin{equation}
+  \label{eq:5}
+  H = -t \sum_{n=0}^{L-1} (\ket{(n+1)a}\bra{na} + \ket{na}\bra{(n+1)a}),
+\end{equation}
+\begin{enumerate}
+  \item For the boundary conditions $\ket{L} = \ket{0}$ (periodic boundary conditions), solve this Hamiltonian for eigenvectors and eigenvalues.
+  \item For the boundary conditions $\ket{L} = e^{i\vartheta} \ket{0}$ (``twisted'' boundary conditions), solve the Hamiltonian for eigenvectors and eigenvalues.
+  \item Returning to $\ket{L} =\ket{0}$ (periodic), we can thread magnetic flux through the system, this is often included by \emph{Peierls substitution}, where we transform the hopping terms in the Hamiltonian $\ket{m}\bra{n} \rightarrow e^{i \int_{na}^{m a} A(x) dx} \ket{m}\bra{n}$ in the Hamiltonian, for a vector potential $A(x)$ (defined as the angular component). If this is a ring then $\oint A(x) dx = \Phi$ for an enclosed flux $\Phi$. Assuming that $A(x)$ is constant in $x$, find the eigenvalues and eigenvectors of this ring. How is $\Phi$ related to $\vartheta$ from the previous question?
+  \item Now, assume we have the simple, infinite tight-binding model
+        \begin{equation}
+          \label{eq:7}
+            H = -t \sum_{n=-\infty}^{\infty} (\ket{(n+1)a}\bra{na} + \ket{na}\bra{(n+1)a}),
+        \end{equation}
+        we can solve this, inefficiently, by picking a ``unit cell'' of size $L$. In particular, first show that Hamiltonian can be rewritten as
+        \begin{multline}
+          \label{eq:8}
+          H = -t \sum_{m=-\infty}^{\infty}\bigg[ \sum_{n=0}^{L-2}( \ket{m L + n + 1}\bra{m L + n} + \ket{mL + n}\bra{mL + n + 1} ) \\ + \ket{(m+1)L}\bra{mL + L-1} + \ket{mL + L-1} \bra{(m+1)L}\bigg].
+        \end{multline}
+        If we take as our translation operator $\hat T_{L} = e^{-i \hat k L}$, and its eigenvalues $0 \leq kL < 2\pi$, this defines a Brillouin zone of size $2\pi/L$. What is the $L$-dimensional $k$-space Hamiltonian we get by stricting to an eigenspace of $\hat T_{L}$? Relate it back to what we found in (b) and (c). How is $k$ related to $\Phi$ and $\vartheta$? (Hint: $\ket{mL + n} = \hat T_{L}^{m} \ket{n}$)
+\end{enumerate}
+
+While we explored this in a simple 1D model, the ideas here easily generalize to higher dimensions and with more complicated unit cells.
+
+
+\problem{Constructing a ``protected'' edge state}
+
+In many models, we can pick a point in the Brillouin zone where we ``expand'' in small wave vectors and get effective ``continuum'' models.
+One such case is the SSH model when $|t_{2}-t_{1}|\ll t_{1,2}$.
+
+For this problem, we can begin with the $k$-space Hamiltonian
+\begin{equation}
+  \label{eq:2}
+  H(\mathbf k) =
+  \begin{pmatrix}
+    0 & t_{1} + t_{2} e^{2 i  k a} ,\\
+t_{1} + t_{2} e^{-2 i k a}  & 0
+  \end{pmatrix}.
+\end{equation}
+\begin{enumerate}
+  \item In the limit of $|t_{2}-t_{1}|\ll t_{1,2}$, what $\mathbf k$ vector has the smallest gap between energies? If this happens at $\mathbf k_{0}$, expand the Hamiltonian $H(\mathbf k_{0} + \mathbf q)$  for small $|\mathbf q|$, keeping only terms linear in $\mathbf q$.
+  \item The above problem should take the form
+        \begin{equation}
+          \label{eq:3}
+          h = v_{\mathrm F} q \sigma_{y} + m \sigma_{x},
+        \end{equation}
+        Find the energy eigenvalues and eigenvectors of this Hamiltonian and how they depend on $q$.
+  \item To make this a continuum model let $q = -i\partial_{x}$. Further, let $m$ depend on space such that
+        \begin{equation}
+          \label{eq:4}
+          h = -i v_{\mathrm F} \sigma_{y} \partial_{x} + m_{0} \tanh(x) \sigma_{x}.
+        \end{equation}
+        Find a solution to this equation with zero eigenvalue when $m_{0}>0$ and when $m_{0}<0$;  plot its magnitude in space. Finally, relate $m_{0}$ back to $t_{2}$ and $t_{1}$; what is the difference between $x<0$ and $x>0$ in the original chain? This continuum solution is due to the ``domain wall'' in the mass $m$ and is due to Jackiw and Rebbi. It is a topologically protected edge state.
+\end{enumerate}
+
+
+\problem{An intro to {\sc PythTB.py}}
+
+We will use this software package to explore tight-binding models, you can find it at \url{https://www.physics.rutgers.edu/pythtb/}.
+To install it on your local machine, you will need python, which can be found at \url{https://conda.io}. Once python is installed (either 2.7 or 3.x), you can install PythTB at the command prompt (terminal) with
+
+\vspace{10pt}
+{\tt pip install pythtb --upgrade}
+\vspace{10pt}
+
+or if you do not have root permissions
+
+\vspace{10pt}
+{\tt pip install pythtb --upgrade --user}
+\vspace{10pt}
+
+You will also need some standard python packages like {\sc numpy} (numerics) and {\sc matplotlib} (plotting).
+This problem is to help get you acquainted with this python package. Download \texttt{benzene.py} from the course website (or see code on the next page).
+If you need any help, please do not hesistate to contact me.
+
+In this example, we will look at the tight-binding model of benzene, which is made with $p_{z}$ orbitals of Carbon atoms. The Hamiltonian is very much like we considered in Problem 2
+\begin{equation}
+  \label{eq:9}
+  H = E_{p} \sum_{j} \ket{j}\bra{j} + t \left(\sum_{j=0}^{5} \ket{j+1} \bra{j} + \mathrm{h.c.}\right), \quad \ket{6} = \ket{0}.
+\end{equation}
+However, these atoms exist in a two-dimensional plane at points $\mathbf r_{j} = r (\cos(j \pi/3), \sin(j \pi/3)) $. We will need this for considering external fields.
+
+\begin{enumerate}
+  \item Identify the parameters in the code, and run the code. It should output the energies and eigenvectors (real part of them). Do these match what you found in Problem 2a?
+  \item Now, we mess with the code! Modify it to have a uniform electric field in the $\hat x$ or $\hat y$ direction (your choice) by raising or lowering site energies in a way that is linear in their spatial coordinates. Make a plot of the six eigenvalues versus electric field strength. Does the behavior make sense? Explain why.
+  \item Instead of an external field, now modify model by changing the hopping strength alternate between bonds such that hopping between 0-1, 2-3, and 4-5 have strength $t+\delta$ and 1-2, 3-4, and 5-0 have stengths $t-\delta$. Make a plot of the six eigenvalues versus $\delta$. Does anything special happen at $\delta=t$? Explain why?
+\end{enumerate}
+
+\newpage
+
+\section*{{\sc benzene.py} -- From Berry Phases in Electronic Structure Theory, Appendix D.2}
+\begin{lstlisting}[language=Python]
+#!/usr/bin/env python
+from __future__ import print_function # python3 style print
+
+# ----------------------------------------------------------
+# Tight-binding model for p_z states of benzene molecule
+# ----------------------------------------------------------
+
+from pythtb import *
+
+# set up molecular geometry
+lat=[[1.0,0.0],[0.0,1.0]]        # define coordinate frame: 2D Cartesian
+r=1.2                            # distance of atoms from center
+orb=np.zeros((6,2),dtype=float)  # initialize array for orbital positions
+for i in range(6):               # define coordinates of orbitals
+  angle=i*np.pi/3.0
+  orb[i,:]= [r*np.cos(angle), r*np.sin(angle)]
+
+# set site energy and hopping amplitude, respectively
+ep=-0.4
+t=-0.25
+
+# define model
+my_model=tbmodel(0,2,lat,orb)
+my_model.set_onsite([ep,ep,ep,ep,ep,ep])
+my_model.set_hop(t,0,1)
+my_model.set_hop(t,1,2)
+my_model.set_hop(t,2,3)
+my_model.set_hop(t,3,4)
+my_model.set_hop(t,4,5)
+my_model.set_hop(t,5,0)
+
+# print model
+my_model.display()
+
+# solve model and print results
+(eval,evec)=my_model.solve_all(eig_vectors=True)
+
+# print results, setting numpy to format floats as xx.xxx
+np.set_printoptions(formatter={'float': '{: 6.3f}'.format})
+# Print eigenvalues and real parts of eigenvectors, one to a line
+print("  n   eigval   eigvec")
+for n in range(6):
+    print(" %2i  %7.3f  " % (n,eval[n]), evec[n,:].real)
+\end{lstlisting}
+
+\end{document}

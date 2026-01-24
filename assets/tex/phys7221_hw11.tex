@@ -1,0 +1,70 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#11}
+\date{Due: 1 December 2022}
+
+\DeclareMathOperator{\arccosh}{arccosh}
+
+\begin{document}
+
+\problem{[20 pts] Moment of Inertia}
+
+Three point masses of identical mass $m$ are located at $(a,0,0)$, $(0,a,2a)$, and $(0,2a,a)$.
+Find the moment of inertia tensor around the origin, the principal moments of inertia, and a set of principal axes.
+
+\problem{[20 pts] Pendulum disk}
+
+\begin{center}
+  \includegraphics[width=0.3\columnwidth]{rotatingwheel_pendulum.png}
+\end{center}
+
+Consider a pendulum formed by suspending a uniform disk of radius $R$ at a point a distance $d$ from its center.
+The disk is free to swing only in the plan of the picture.
+\begin{enumerate}
+  \item Using the parallel axis theorem, or calculating it directly, find the moment of inertia $I$ for the pendulum about an axis a distance $d$ ($0 \leq d < R$) from the center of the disk.
+  \item Find the gravitational torque on the pendulum when displaced by an angle $\phi$.
+  \item Find the equation of motion for small oscillations and give the frequency $\omega$. Further, find the value of $d$ corresponding to the maximum frequency, for fixed $R$ and $m$.
+\end{enumerate}
+
+\problem{[20 pts] Angular moment in different frames}
+
+A bar of negligible weight and length $\ell$ has two identical masses $m$ on each end.
+The bar is forced to rotate about an axis passing through its center and making an angle $\theta$ with it.
+The rotation is such that the angular velocity (pseudo-)vector $\bm \omega$ does not change in time.
+\begin{enumerate}
+  \item Write the angular momentum $\mathbf L$ of the bar in \emph{body} coordinates, in terms of the three components of $\bm \omega$. Compute the time derivative of $\mathbf L$ in the body frame, and from Euler's equations, find the components of the torque that are driving bar (along the principal axes of inertia).
+  \item Consider now an \emph{inertial} frame of reference with origin at the center of the bar and third axis in the direction of $\bm \omega$.
+        Compute the bar's angular momentum in this frame by adding the angular momentum of each mass, $\mathbf L = \mathbf L_{1} + \mathbf L_{2}$ where $L_{i} = m \mathbf r_{i} \times \mathbf v_{i}$, and
+        compute the time derivative of $\mathbf L$ in the inertial frame.
+  \item Find now the transformation that relates the inertial and body frame, and use it to show that the two expressions you derived for $\mathbf L$ agree with each other. Check also that the time derivatives of $\mathbf L$ in the two frames are indeed related by
+        \begin{equation}
+          \label{eq:1}
+          \dot {\mathbf L}|_{\mathrm{inertial}} = \bm \omega \times \mathbf L + \dot{\mathbf L}|_{\mathrm{body}}
+        \end{equation}
+\end{enumerate}
+
+\problem{[20 pts] A car door}
+
+\begin{center}
+  \includegraphics[width=0.5\columnwidth]{Fig2.pdf}
+\end{center}
+
+A car door begins moving on a horizontal road, with the door accidentally left open with an initial angle $\phi_{0}$ ($\phi=0$ being when the door is full closed).
+The motion of the car is described by a function $X(t)$.
+The door has mass $M$, width $W$, height $H$, and a negligble thickness.
+Assume this is a primitive car, where the hinges allow a full rotation of the door.
+\begin{enumerate}
+  \item Write the Lagrangian of the door, considering it as a rotating rigid body.
+  \item Find the differential equation for the angle of the door with the car, in terms of the (assumed known) position $X(t)$ of the car
+  \item Describe qualitatively the door's motion when the car moves
+        \begin{itemize}
+          \item with uniform velocity.
+          \item with uniform positive acceleration.
+          \item with uniform negative acceleration.
+        \end{itemize}
+  \item Under what conditions can the door oscillate harmonically about an equilibrium position? What is the frequency of the oscillation?
+\end{enumerate}
+
+
+\end{document}

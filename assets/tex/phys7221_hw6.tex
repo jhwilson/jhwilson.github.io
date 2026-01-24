@@ -1,0 +1,49 @@
+\documentclass{jhwhw}
+
+\author{PHYS 7221}
+\title{Homework \#6}
+\date{Due: 11 October 2022}
+
+\begin{document}
+
+\problem{[20 pts] Escaping particles constituents}
+
+A particle with internal energy $E_{\mathrm{int}}$ is traveling with velocity $\mathbf V$ perpendicular to a screen.
+At a time before it hits the screen, the particle disintegrates losing energy $\epsilon$ into kinetic energy, the two components $m_{1}$ and $m_{2}$ are released isotropically in the center of mass frame (while maintaining momentum conservation).
+What is the fraction of experimental runs in which particles $m_{1}$ hits the screen as a function of $|\mathbf V|$?
+What is the fraction of experimental runs in which they both hit the screen as a function of $|\mathbf V|$?
+
+\problem{[20 pts] Linear Triatomic molecule}
+
+In class we discussed the triatomic molecule. Starting with that solution consider the following
+\begin{enumerate}
+  \item Find the solution $y_{i}(t)$ for $i=1,2,3$ with initial data $y_{1}(0) = -A$, $y_{2}(0) = Am/M$, $y_{3}(0) = 0$, and $\dot y_{1} = \dot y_{2} = \dot y_{3} = 0$.
+  \item Describe the dynamics of the center of mass of the system for this solution.
+  \item Define $\omega \equiv \frac{\omega_{1} + \omega_{2}}2$ and $\Delta \omega = \frac{\omega_{1} - \omega_{2}}2$ where $\omega_{1} = \sqrt{k/m}$ and $\omega_{2} = \sqrt{k (2M +m)/(mM)}$. Describe the dynamics of each particle for the solution obtained above in the limit $\omega1 \approx \omega_{2}$, i.e., $\omega \gg \Delta \omega$ (the phenomenon of ``beats'' appears).
+\end{enumerate}
+
+\emph{Hint: } Use $\cos(\omega_{1} t) \pm \cos(\omega_{2} t) = (1 \pm 1) \cos(\omega t) \cos(\Delta \omega t) - (1 \mp 1) \sin(\omega t) \sin(\Delta \omega t)$.
+
+\problem{[20 pts] Two masses attached to walls}
+  Two identical bodies of mass $m$ are attached by identical springs of spring constant $k$ as shown in the figure.
+\begin{enumerate}
+  \item Find the frequencies of small oscillation of this system (normal frequencies).
+  \item The first mass (reading left-to-right) is displaced from its position by a small distance $a_{1}$ to the right while the second mass is not moved from its position. If the two masses are released with zero velocity, what is the subsequent motion of the second mass?
+\end{enumerate}
+
+\begin{center}
+  \includegraphics{Plot1.pdf}
+\end{center}
+
+\problem{[20 pts] Three masses on a circle}
+
+Three equal mass particles have a stationary position at the vertices of an equilateral triangle on a circle of radius $R$.
+They are connected by springs with spring constants $k$ that lie along the arcs of the circumference of the circle.
+The particles and the springs are constrained to only lie on the circle so that the potential energy of the spring is determined solely by the arc length it covers.
+\begin{enumerate}
+  \item Determine the normal frequencies and normal modes in the plane. Describe the physical effects of any zero frequency mode.
+  \item Suppose we change one spring constant by $\delta k$ while we keep the other two unchanged. Compute the change in the normal frequencies and normal modes at first order in $\delta k$.
+  \item Suppose we now change the mass of one particle by an amount $\delta m$. What is the change in the normal frequencies and modes?
+\end{enumerate}
+
+\end{document}

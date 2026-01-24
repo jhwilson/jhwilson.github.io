@@ -1,0 +1,23 @@
+---
+layout: post
+title: Use GmailTeX to compose and view emails with LaTeX
+category: apps
+---
+
+I've received numerous emails with pseudo-LaTeX in them, and I've composed many emails as well. My normal solution is to convert LaTeX to unicode with the helpful Mac application [Unicodeit][1]. However, this method is incomplete and misses some of the more complicated LaTeX.
+<!--more-->
+
+To address this, there is an extension to gmail called [GmailTeX][2] available on Chrome, Firefox, Safari, and Opera (also it has a bookmarklet for any other browser).
+
+If someone sends you an email in pseudo-LaTeX it can try to parse what the math with **simple math**. The resulting output is kind of what you'd get by using Unicodeit. Or, if someone sends you LaTeX inside dollar signs (i.e., $ [...] $), then it can just compile that to LaTeX for you with its **rich math** function.
+
+But best of all, when you compose emails and use the **rich math** function, it creates an image of your math hosted on a remote server. They don't need to have GmailTeX installed unless you decide to send them the code itself.
+
+The best collaborative apps require little to no commitment for collaborators to use, and this is one of those cases. Collaborators will just receive email with LaTeX images without needing to install anything.
+
+The only issue that I've found from playing around with this extension is that the receiver may have to flag your email as "trustworthy" and/or allow images from remote servers to be viewed in their email client. Otherwise, they may not see any mathematics. Additionally, as you might have guessed, the emails won't be viewable in an offline mode. Unless you're going through these emails on an airplane though, I don't think that should be too big of an issue.
+
+(h/t Brian Danielak)
+
+[1]:http://www.svenkreiss.com/UnicodeIt
+[2]:http://alexeev.org/gmailtex.html

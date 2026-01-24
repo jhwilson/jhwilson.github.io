@@ -1,0 +1,108 @@
+\documentclass{jhwhw}
+
+\usepackage{listings}
+
+\DeclareMathOperator{\Rer}{Re}
+\DeclareMathOperator{\Imr}{Im}
+
+\author{}
+\title{PHYS 7364 -- Homework \#3}
+\date{12 February 2022}
+
+\begin{document}
+
+\problem{Spin and Chern numbers}
+
+In this problem, we will compute Chern number for the Hamiltonian
+\begin{equation}
+  \label{eq:3}
+  H = - \gamma \mathbf B \cdot \mathbf S
+\end{equation}
+for arbitrary spin $s > \frac12$ and spin operators $\mathbf S$ defined by the commutation relation $[S_{i},S_{j}] = i \epsilon_{ijk} S_{k}$ where $\epsilon_{ijk}$ is the fully anti-symmetric Levi-Civita symbol.
+\begin{enumerate}
+  \item If $\mathbf B = B \hat{\mathbf z}$, find the lowest energy $H$ and arbitary spin $s$ (call it $\ket{\hat{\mathbf z}}$).
+  \item We want the solution of $H$ with $\mathbf B = B \hat{ \mathbf n}$ and $\hat{\mathbf n} = (\cos\phi \sin\theta, \sin\phi \sin\theta, \cos\theta)$. To do this, we can rotate $H = -\gamma B S_{z}$ with the operator $U(\theta,\phi) = e^{-i\phi S_{z}} e^{-i \theta S_{y}}$. Show that $U(\theta,\phi) S_{z} U(\theta, \phi)^{\dagger} = S_{x} \cos \phi \sin \theta + S_{y} \sin\phi \sin \theta + S_{z} \cos \theta$. (\emph{Hint}: It is useful to use the identity $e^{-i A}B e^{i A} = \sum_{n=0}^{\infty} \frac{(-i)^{n}}{n!} \underbrace{[A, [A, \cdots, [A, B]]]}_{n \text{ commutators}}$ along with $[S_{i},S_{j}] = i \epsilon_{ijk} S_{k}$.)
+  \item With the eigenstate from (a) and the transformation from (b), argue that the eigenstate of $H = -\gamma \mathbf B \cdot \mathbf S$ is $\ket{\hat{\mathbf n}} = U(\theta, \phi) \ket{\hat{\mathbf z}}$.
+  \item While still keeping $s$ unspecified, compute the Berry connections $A_{\phi} = \braket{\hat{\mathbf n} | i\partial_{\phi} \hat{\mathbf n}}$, $A_{\theta} = \braket{\hat{\mathbf n} | i\partial_{\theta} \hat{\mathbf n}}$ and the Berry curvature $\Omega_{\theta \phi} = \partial_{\theta} A_{\phi} - \partial_{\phi} A_{\theta}$.
+  \item Compute the full integral over the sphere $\Phi = \int_{0}^{2\pi} d\phi \int_{0}^{\pi} d\theta \, \Omega_{\theta \phi}$. Using the Chern theorem, we know that this must be an $2\pi C$ for an integer $C$. What does this tell us about the allowed values of $s$?
+\end{enumerate}
+
+
+\problem{Current and adiabatic transport}
+
+Here we compute the current induced by an adiabatic change of the Hamiltonian and check that it correctly predicts the change in the electric dipole moment.
+\begin{enumerate}
+  \item Using
+        \begin{equation}
+          \label{eq:10}
+          \ket{\psi(t)} = e^{i\alpha(t)}\left[ \ket{n} + \dot \lambda \ket{\delta n}\right],
+        \end{equation}
+        (recall that $\alpha(t)$ is a combination of geometric phase and dynamic phase), show that the induced change in some arbitrary operator $\mathcal O$ is $\braket{\mathcal O} = 2\dot \lambda \Rer \braket{n | \mathcal O | \delta n}$.
+  \item Defining the current operator $\mathcal J = - e \mathbf v$ in terms of the velocity operator $\mathbf v$ and using
+        \begin{equation}
+          \label{eq:1}
+          \ket{\delta n} = -i \hbar \sum_{m\neq n} \frac{\braket{m | \partial_{\lambda} n}}{E_{n} - E_{m}} \ket{m},
+        \end{equation}
+        show that
+        \begin{equation}
+          \label{eq:2}
+          \braket{\mathcal J} = - 2 e \hbar \dot \lambda \Imr \sum_{m\neq n} \frac{\braket{n | \mathbf v | m}\braket{m | \partial_{\lambda} n }}{E_{n} - E_{m}}.
+         \end{equation}
+  \item Using $\mathbf v = -\frac{i}{\hbar} [\mathbf r, H]$, show that this becomes $\braket{\mathcal J} = -2 e \dot \lambda \Rer \braket{ n | \mathbf r | \partial_{\lambda} n }$. [\emph{Hint}: Note that $\braket{n|\mathbf r | n} \braket{n | \partial_{\lambda}n}$ is pure imaginary (why?).]
+  \item Noting that $\braket{\mathcal J}$ has the interpretation of $d\mathbf{d}/dt$, where $\mathbf d = - e \mathbf r$ is the dipole operator, and canceling the $dt$, show that this becomes $\partial_{\lambda}\braket{\mathbf d} = - 2 e \Rer \braket{n | \mathbf r|\partial_{\lambda} n} = - e \partial_{\lambda} \braket{n | \mathbf r | n}$.
+\end{enumerate}
+
+\problem{Averaging the guessed-at Polarization}
+In class, we argued that the guess for polarization
+\begin{equation}
+  \label{eq:5}
+  \mathbf P_{\mathrm{guess}} = \frac1{V_{\mathrm{cell}}} \int_{\mathrm{cell}} \mathbf r \rho(\mathbf r) d^{3}r
+\end{equation}
+does not function as a good definition for bulk polarization. Show that this expression vanishes when averaged over all possible locations of the unit cell origin. \\
+\emph{Hint}: First show that the average is porportional to $\int_{\mathrm{cell}} \int_{\mathrm{cell}} \mathbf r \rho(\mathbf r - \mathbf r') d^{3}r \, d^{3} r'$ where $\mathbf r'$ is the shift of the origin of the cell. Then focus on the $\mathbf r'$ integral and argue that the result vanishes.
+
+\problem{Filling in some Wannier details}
+In class, we argued for how Wannier functions are related to the polarization. Here we fill in some of the details for one-dimension.
+
+The Wannier functions for band $n$ are defined via
+\begin{equation}
+  \label{eq:8}
+  \ket{\phi(R)} = a \int_{0}^{2\pi/a} \frac{dk}{2\pi} e^{ik(R - \hat r)} \ket{u_{nk}},
+\end{equation}
+for the position operator $\hat r$ (over all of space, not just a unit cell). For this problem, it is useful to insert the identity $1 = \int_{-\infty}^{\infty} dr \, \ket{r}\bra{r} = \sum_{R} \int_{0}^{a} dr \ket{R + r} \bra{R + r}$ and $R = n a$ for an integer $n$.
+\begin{enumerate}
+  \item Confirm that $\braket{\phi(R)| \phi(R)} = 1$.
+  \item Show that
+        \begin{equation}
+          \label{eq:9}
+          (\hat r - R) \ket{\phi(R)} = -\frac{a}{2\pi} \int_{0}^{2\pi/a} dk \, e^{ik(R - \hat r)} \ket{i \partial_{k} u_{nk}}.
+        \end{equation}
+
+  \item Finally, show that $\braket{\phi(R) | (\hat r - R) | \phi(R)} = \frac{a}{2\pi} \int_{0}^{2\pi/a} dk \, \braket{u_{nk} | i \partial_{k} u_{nk}} = \frac{a}{2\pi} \phi_{n}$. The polarization is then $P = -e \braket{\phi(R)| \hat{r} - R | \phi(R)}$.
+\end{enumerate}
+
+\problem{Polarization and charge pump}
+
+Consider the Hamiltonian whose unit cell includes three sites and is written as
+\begin{equation}
+  \label{eq:6}
+  H = -t \sum_{j} (\ket{j} \bra{j+1} + \mathrm{h.c.}) - \delta \sum_{j} \cos(2\pi j/3 - \lambda) \ket{j}\bra{j}.
+\end{equation}
+In this problem, we will use \texttt{pythtb.py} to determine how charge is pumped as we vary $\lambda$ for each band. Recall from class that the polarization for band $n$ is
+\begin{equation}
+  \label{eq:7}
+  P_{n} = -\frac{e}{2\pi} \phi_{n}, \quad \phi_{n} = \oint dk\, A_{n}(k),
+\end{equation}
+and $\phi_{n}$ is directly related to the center of Wannier functions as $\bar x_{n} = a \phi_{n}/(2\pi)$ with lattice spacing $a$.
+
+\begin{enumerate}
+  \item Run the code \texttt{chain_3_cycle.py} (see course website). What does the output tell us about the pumped charge and how it is quantized?
+  \item Modify the program to plot the Wannier center positions (Berry phase) of each of the three bands separately, thereby obtaining the cycle Chern number for each band. Before generating plots, ask yourself what you expect. The Wannier center of the lowest-energy band moves to the right during the cycle. Do you expect the same for the highest energy band, or do you expect it to move in the reverse direction? Any guess about the middle band?
+  \item Now make a plot of the pumped charged if the two lowest bands are occuped and if all three bands are occupied.
+\end{enumerate}
+
+
+
+
+
+\end{document}

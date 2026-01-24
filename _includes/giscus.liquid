@@ -8,7 +8,10 @@
     <br>
   {% endif %}
 
-  {% if site.giscus.repo %}
+  {% assign giscus_repo = site.giscus.repo | default: '' %}
+  {% assign giscus_repo_id = site.giscus.repo_id | default: '' %}
+  {% assign giscus_category_id = site.giscus.category_id | default: '' %}
+  {% if giscus_repo != '' and giscus_repo_id != '' and giscus_category_id != '' %}
     <script defer src="{{ '/assets/js/giscus-setup.js' | relative_url }}"></script>
     <noscript>
       Please enable JavaScript to view the
