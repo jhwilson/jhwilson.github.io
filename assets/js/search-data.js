@@ -179,11 +179,6 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2022-05-02-newPRA/";
-            },},{id: "projects-project-3",
-          title: 'project 3',
-          description: "a project that redirects to another website",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
             },},{id: "projects-analog-gravity",
           title: 'Analog Gravity',
           description: "Gravity analogies in low-energy systems",
