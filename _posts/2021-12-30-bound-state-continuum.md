@@ -32,43 +32,45 @@ $$
 $$
 
 {% details Expand for derivation %}
-  ***
-  We require the bound state to be square integrable, so $$\psi_0(x) = \mathcal N e^{-\kappa x}$$ for $$x>0$$ and $$\psi_0(x) = \mathcal N e^{\kappa x}$$ for $$x<0$$. In both cases, we can evaluate \eqref{eq:schro}
 
-  $$
+---
+
+We require the bound state to be square integrable, so $$\psi_0(x) = \mathcal N e^{-\kappa x}$$ for $$x>0$$ and $$\psi_0(x) = \mathcal N e^{\kappa x}$$ for $$x<0$$. In both cases, we can evaluate \eqref{eq:schro}
+
+$$
 \begin{equation}
-  -\frac{\kappa^2}{2m} \psi_0(x) = E\psi_0(x), \quad \implies \kappa = \sqrt{-2mE}. \label{eq:bs_energy}
+-\frac{\kappa^2}{2m} \psi_0(x) = E\psi_0(x), \quad \implies \kappa = \sqrt{-2mE}. \label{eq:bs_energy}
 \end{equation}
-  $$
+$$
 
-  Using our forms of $$\psi_0(x)$$ on either side of zero, we have $$\psi_0'(0^+) = - \kappa \psi_0(0)$$ and $$\psi_0(0^-) = +\kappa \psi_0(0)$$. Putting these into \eqref{eq:matching}, we have
+Using our forms of $$\psi_0(x)$$ on either side of zero, we have $$\psi_0'(0^+) = - \kappa \psi_0(0)$$ and $$\psi_0(0^-) = +\kappa \psi_0(0)$$. Putting these into \eqref{eq:matching}, we have
 
-  $$
-  \begin{equation}
-    \frac{\kappa}{m} \psi_0(0) = \lambda \psi_0(0).
-  \end{equation}
-  $$
+$$
+\begin{equation}
+  \frac{\kappa}{m} \psi_0(0) = \lambda \psi_0(0).
+\end{equation}
+$$
 
-  This means that $$\kappa = \lambda m$$, and matching this to \eqref{eq:bs_energy} we find $$E = -\frac12 m \lambda^2$$. All that is left is normalization and simply
+This means that $$\kappa = \lambda m$$, and matching this to \eqref{eq:bs_energy} we find $$E = -\frac12 m \lambda^2$$. All that is left is normalization and simply
 
-  $$
-  \begin{equation}
-    \begin{aligned}
-    1 & = \int dx |\psi_0(x)|^2 \\
-     & = 2 \int_0^\infty dx \mathcal N^2 e^{-2\kappa x} \\
-     & = \frac{\mathcal N^2}{\kappa}.
-    \end{aligned}
-  \end{equation}
-  $$
+$$
+\begin{equation}
+  \begin{aligned}
+  1 & = \int dx |\psi_0(x)|^2 \\
+   & = 2 \int_0^\infty dx \mathcal N^2 e^{-2\kappa x} \\
+   & = \frac{\mathcal N^2}{\kappa}.
+  \end{aligned}
+\end{equation}
+$$
 
-  This gives us $$\mathcal N = \sqrt{\kappa} = \sqrt{\lambda m}$$, completing our derivation.
+This gives us $$\mathcal N = \sqrt{\kappa} = \sqrt{\lambda m}$$, completing our derivation.
 
-  ***
+---
 
 {% enddetails %}
 
 <div style="text-align:center">
-{% include figure.html path="assets/img/pot_and_boundstate.png" caption="The delta function potential (red) along with the resulting bound state (gray)." class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="assets/img/pot_and_boundstate.png" caption="The delta function potential (red) along with the resulting bound state (gray)." class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>
 
 But what about the continuum? First, sine waves automatically satisfy \eqref{eq:schro}, and we have
@@ -99,9 +101,9 @@ This is again chosen such that $$\int dx \; \psi_k^c(x) \psi_{k'}^c(x) = \pi \de
 
 {% details Expand for derivation %}
 
-***
+---
 
-First, $$\psi_k^s(x) = \sin(k x)$$ is a complete basis for antisymmetric wavefunctions, and therefore, we know that $$\psi_k^c(-x) = \psi_k^c(x)$$ in order to maintain orthogonality with $$\psi_k^s(x)$$. 
+First, $$\psi_k^s(x) = \sin(k x)$$ is a complete basis for antisymmetric wavefunctions, and therefore, we know that $$\psi_k^c(-x) = \psi_k^c(x)$$ in order to maintain orthogonality with $$\psi_k^s(x)$$.
 This implies that if for $$x>0$$ we have $$\psi_k^c(x) = A \cos(kx) + B \sin(kx)$$, then for $$x<0$$, $$\psi_k^c(x) = A \cos(kx) - B \sin(kx)$$ justifying our functional form.
 
 We have already guaranteed continuity across $$x=0$$, so now we just need to satisfy the matching conditions \eqref{eq:matching} for which we have $${\psi_k^{c}}'(0^+) = B k$$ and $${\psi_k^{c}}'(0^-) = -B k$$ and therefore by \eqref{eq:matching}
@@ -142,7 +144,7 @@ $$
 
 completing this derivation.
 
-***
+---
 
 {% enddetails %}
 
@@ -186,10 +188,10 @@ $$
 \end{equation}
 $$
 
-As you might suspect: the continuum is depleted in the exact way to compensate the bound state. This is known as the Friedel sum rule. But which continuum states are playing the largest roles? 
-For this, we can take 
+As you might suspect: the continuum is depleted in the exact way to compensate the bound state. This is known as the Friedel sum rule. But which continuum states are playing the largest roles?
+For this, we can take
 
-$$\Delta \rho(E) \equiv \lim_{\delta\rightarrow0^+}\int dx \, \Delta \rho(E,x) e^{-\delta |x|},$$ 
+$$\Delta \rho(E) \equiv \lim_{\delta\rightarrow0^+}\int dx \, \Delta \rho(E,x) e^{-\delta |x|},$$
 
 from which we find
 
@@ -200,10 +202,10 @@ $$
 $$
 
 We can tell from this that half of the weight comes from the $$k=0$$ (constant) mode. The rest of the weight comes from higher $$k$$'s distributed like a Lorentzian.
-If we include the ground state as a positive $$\delta$$-function, we get: 
+If we include the ground state as a positive $$\delta$$-function, we get:
 
 <div style="text-align:center">
-{% include figure.html path="assets/img/Delta_rho.png" caption="The change in density of states for with delta functions artificially broadened to make them visible. This function integrates to zero: the Friedel sum rule in action." class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="assets/img/Delta_rho.png" caption="The change in density of states for with delta functions artificially broadened to make them visible. This function integrates to zero: the Friedel sum rule in action." class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>
 
-This is a simple example of how charge can be pulled from the continuum to make a bound state: leaving a depletion of density in the continuum. 
+This is a simple example of how charge can be pulled from the continuum to make a bound state: leaving a depletion of density in the continuum.

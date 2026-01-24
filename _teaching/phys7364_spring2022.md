@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PHYS 7364 - Spring 2022
-description: Condensed Matter Physics II Spring 2022 
+description: Condensed Matter Physics II Spring 2022
 img: assets/img/superconductor.jpg
 importance: 1
 ---
@@ -15,7 +15,7 @@ importance: 1
 
 # Course description
 
-Welcome to Condensed Matter Physics II! In this course, we will be focusing on two important topics in modern condensed matter theory: Many body theory and topology in condensed matter systems. These ideas and techniques have become quite important in modern condensed matter physics, with the Nobel prize in 2016 being given for ["for theoretical discoveries of topological phase transitions and topological phases of matter."](https://www.nobelprize.org/prizes/physics/2016/summary/) At the same time, many complex phenomena require _interactions_ between many particles, leading to new emergent phenomena that cannot be figured out by looking at the consituent particles; we will start to build up these techniques. 
+Welcome to Condensed Matter Physics II! In this course, we will be focusing on two important topics in modern condensed matter theory: Many body theory and topology in condensed matter systems. These ideas and techniques have become quite important in modern condensed matter physics, with the Nobel prize in 2016 being given for ["for theoretical discoveries of topological phase transitions and topological phases of matter."](https://www.nobelprize.org/prizes/physics/2016/summary/) At the same time, many complex phenomena require _interactions_ between many particles, leading to new emergent phenomena that cannot be figured out by looking at the consituent particles; we will start to build up these techniques.
 
 ## Lectures
 
@@ -42,9 +42,9 @@ Relevant papers will be sent out or printed as needed.
 - 20% Final presentation
 - 20% (Take-home) final
 
-# Homework 
+# Homework
 
-Homework can be "collaborative," but everyone needs to write-up their own. When stepping through logic and math, use complete sentences and explain what you are doing. 
+Homework can be "collaborative," but everyone needs to write-up their own. When stepping through logic and math, use complete sentences and explain what you are doing.
 
 Homeworks use the class file [jhwhw.cls](/assets/tex/jhwhw.cls). See [this stack exchange post](https://tex.stackexchange.com/questions/31183/class-file-for-homework-assignments/31230#31230) for information on how to use it.
 
@@ -58,40 +58,42 @@ Homeworks use the class file [jhwhw.cls](/assets/tex/jhwhw.cls). See [this stack
 
 # Final presentation
 
-Take 1 paper from the [cond-mat arXiv](https://arxiv.org/archive/cond-mat) that will appear between now and end of March (cross-listings are OK).  Make a presentation about this material that answers the following questions:
+Take 1 paper from the [cond-mat arXiv](https://arxiv.org/archive/cond-mat) that will appear between now and end of March (cross-listings are OK). Make a presentation about this material that answers the following questions:
+
 - What question did the authors pursue in this work?
 - _Why_ did the authors pursue it (motivation)
 - What experimental or theoretical techniques did they use?
-  - Papers often leave out details of the techniques. Research what was used and fill in some of the gaps. 
+  - Papers often leave out details of the techniques. Research what was used and fill in some of the gaps.
 - What did they conclude?
 - Is there anything you would change or is there a new insight you gained from this work?
 
 # Course outline
+
 (average of approximately 2 days per item)
 
-* Electronic Structure Theory
-    1. Bloch's theorem
-    2. Tight-binding models
-    3. Linear Response
-* Second quantization
-    1. Free fermions
-    2. Jordan-Wigner
-    3. Superconductor (mean-field ansatz)
-    4. Kitaev Chain and Majorana fermions
-* Berry phase
-    1. Theory
-    2. SSH model -- [Topological Classification]({% post_url 2022-02-20-SSH-model %})
-    3. Charge pumping
-* Quantum Hall Effect -- [Lecture notes for 1 and 2 below](/assets/pdf/QHE%20lecture%20notes.pdf)
-    1. With magnetic field
-    2. [TKNN](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.49.405)
-    3. Without a magnetic field (anomalous Hall effect) -- [Haldane model](/assets/pdf/Haldane%20model.pdf)
-* Path integrals & Green's functions
-    1. Single-particle 
-    2. Wick's theorem
-    3. Free Bosons
-    4. Free fermions
-* Zero-temperature Feynman diagrams
-    1. Hartree-Fock 
-    2. Self-energy
-    3. Response functions
+- Electronic Structure Theory
+  1. Bloch's theorem
+  2. Tight-binding models
+  3. Linear Response
+- Second quantization
+  1. Free fermions
+  2. Jordan-Wigner
+  3. Superconductor (mean-field ansatz)
+  4. Kitaev Chain and Majorana fermions
+- Berry phase
+  1. Theory
+  2. SSH model -- [Topological Classification]({% post_url 2022-02-20-SSH-model %})
+  3. Charge pumping
+- Quantum Hall Effect -- [Lecture notes for 1 and 2 below](/assets/pdf/QHE%20lecture%20notes.pdf)
+  1. With magnetic field
+  2. [TKNN](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.49.405)
+  3. Without a magnetic field (anomalous Hall effect) -- [Haldane model](/assets/pdf/Haldane%20model.pdf)
+- Path integrals & Green's functions
+  1. Single-particle
+  2. Wick's theorem
+  3. Free Bosons
+  4. Free fermions
+- Zero-temperature Feynman diagrams
+  1. Hartree-Fock
+  2. Self-energy
+  3. Response functions

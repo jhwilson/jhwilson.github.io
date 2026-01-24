@@ -1,0 +1,4 @@
+nbconvert
+pyyaml
+scholarly
+bibtexparser

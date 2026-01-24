@@ -6,7 +6,8 @@ category: short-calculations
 ---
 
 For applications in many parts of condensed matter physics and cold atoms physics, we use what is known as the Rashba spin-orbit coupled Hamiltonian. This Hamiltoninan is so-named because it couples momentum $$\mathbf{p}$$
-to the spin $$\mathbf{S}=\frac12\sigma$$ where $$\sigma = (\sigma_x,\sigma_y,\sigma_z)$$ are the Pauli matrices and $$\mathbf{p}=(p_x,p_y,p_z)$$ is a vector  of momentum operators:
+to the spin $$\mathbf{S}=\frac12\sigma$$ where $$\sigma = (\sigma_x,\sigma_y,\sigma_z)$$ are the Pauli matrices and $$\mathbf{p}=(p_x,p_y,p_z)$$ is a vector of momentum operators:
+
 <!--more-->
 
 \begin{equation} H = \frac{p^2}{2m} + \alpha (\boldsymbol{\sigma} \times \mathbf{p})\cdot \hat{\mathbf{z}} + \Delta \sigma_z. \end{equation}
@@ -21,7 +22,7 @@ First of all, instead of the normal method of finding eigenvectors, we note that
 
 where $$\mathbf{b}(p) = (\alpha p_y, -\alpha p_x, \Delta)$$. Now, $$\mathbf{b}(p)$$ represents a point on the Bloch sphere, and so we expect the eigenvectors to be parallel and anti-parallel to this vector. The energies in this case are very straight forward and amount to the positive and negative of $$\lvert\mathbf{b}(p)\rvert$$:
 
-\begin{equation} \epsilon_\pm(p) = \frac{p^2}{2m} \pm \sqrt{ \alpha^2 p^2 + \Delta^2}. \end{equation}
+\begin{equation} \epsilon\_\pm(p) = \frac{p^2}{2m} \pm \sqrt{ \alpha^2 p^2 + \Delta^2}. \end{equation}
 
 With these eigenvalues, it is a straight forward exercise in linear algebra to find the eigenvectors. After a bit of algebra, the eigenvectors of $$H$$ in terms of the eigenvectors of $$\sigma_z$$ ( $$\sigma_z\left\lvert\uparrow\right\rangle = \left\lvert\uparrow\right\rangle$$ and $$\sigma_z\left\lvert\uparrow\right\rangle = -\left\lvert\uparrow\right\rangle$$ ) are
 
@@ -30,7 +31,7 @@ With these eigenvalues, it is a straight forward exercise in linear algebra to f
 where we have defined $$\phi$$ by $$p_y+ip_x = p e^{i\phi}$$. Note that when $$p_{x,y} \rightarrow -p_{x,y}$$, the occupations stay the same. However, if we just look at one energy, $$\epsilon_-(p)$$ the ground state energy, we see that the state we get when $$p_{x,y} \rightarrow -p_{x,y}$$ is almost orthogonal to the original state.
 
 <div style="text-align:center">
-{% include figure.html path="assets/img/Energy-splitting-rashba-so.png" %}
+{% include figure.liquid path="assets/img/Energy-splitting-rashba-so.png" %}
 </div>
 
 The energy bands themselves look like the figure on the right where the vertical axis is energy (and for this particular example, $$m=1$$, $$\alpha = 3$$, and $$\Delta=2$$). Interestingly, the introduction of $$\Delta$$ actually causes the gap to open up -- the dotted lines are for when $$\Delta=0$$.
