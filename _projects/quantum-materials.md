@@ -2,7 +2,7 @@
 layout: page
 title: Quantum Materials
 description: understanding topology, disorder, and incommensuration
-img: 
+img:
 importance: 1
 category: research
 ---

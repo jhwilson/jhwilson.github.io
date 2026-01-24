@@ -1,16 +1,17 @@
 ---
 title: Thermal conductivity via gravity
 layout: post
-published: false 
+published: false
 category: short-calculations
 ---
 
 In 1964, Luttinger made an astute observation
+
 > Just as the space- and time-varying external electric potential produced electric currents and density variations, so a varying gravitational field will produce, in principle, energy flows and temperature fluctuations.
 
 He would go on to calculate heat transport using this method of gravity. Here, we repeat his calculation.
 
-First, in our system we say we have a Hamiltonian 
+First, in our system we say we have a Hamiltonian
 
 $$
 \begin{equation}
@@ -54,6 +55,7 @@ $$
 h(\mathbf r) = \sum_{n=0}^\infty \sum_{m = 0}^n  ( i \overleftarrow{\partial_{\mathbf r}})^m h_{nm}(\mathbf r) (-i \overrightarrow{\partial_{\mathbf r}})^{n-m}.
 \end{equation}
 $$
+
 In order to ensure that the energy density is hermitian, we can evaluate $$h^\dagger(\mathbf r)$$ and matching terms, we find
 
 $$
@@ -64,8 +66,8 @@ When we have derivatives acting on the Dirac delta function we will use $$\parti
 
 $$
 \begin{equation}
- \psi^\dagger h(\mathbf r) \delta(\mathbf r - \mathbf r') h(\mathbf r')\psi'  =  
- \sum_{nm,n'm'} (-1)^{n-m} \partial_{\mathbf r}^m\psi^{\dagger} h_{nm} \partial_{\mathbf r'}^{n-m+m'} \delta(\mathbf r - \mathbf r') h_{n'm'} \partial_{\mathbf r'}^{n' - m'} \psi' 
+ \psi^\dagger h(\mathbf r) \delta(\mathbf r - \mathbf r') h(\mathbf r')\psi'  =
+ \sum_{nm,n'm'} (-1)^{n-m} \partial_{\mathbf r}^m\psi^{\dagger} h_{nm} \partial_{\mathbf r'}^{n-m+m'} \delta(\mathbf r - \mathbf r') h_{n'm'} \partial_{\mathbf r'}^{n' - m'} \psi'
 \end{equation}
 $$
 
@@ -74,7 +76,7 @@ Integrating over $$\mathbf r'$$ gives us
 $$
 \begin{equation}
 \begin{aligned}
-  \int_{\mathbf r'} \psi^\dagger h(\mathbf r) \delta(\mathbf r - \mathbf r') h(\mathbf r')\psi' = 
+  \int_{\mathbf r'} \psi^\dagger h(\mathbf r) \delta(\mathbf r - \mathbf r') h(\mathbf r')\psi' =
  \sum_{nm,n'm'} (-1)^{m'} \partial_{\mathbf r}^m\psi^{\dagger} h_{nm} \partial_{\mathbf r}^{n-m+m'}[ h_{n'm'} \partial_{\mathbf r}^{n' - m'} \psi ]
 \end{aligned}
 \end{equation}

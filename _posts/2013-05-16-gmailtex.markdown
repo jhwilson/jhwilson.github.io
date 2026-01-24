@@ -5,6 +5,7 @@ category: apps
 ---
 
 I've received numerous emails with pseudo-LaTeX in them, and I've composed many emails as well. My normal solution is to convert LaTeX to unicode with the helpful Mac application [Unicodeit][1]. However, this method is incomplete and misses some of the more complicated LaTeX.
+
 <!--more-->
 
 To address this, there is an extension to gmail called [GmailTeX][2] available on Chrome, Firefox, Safari, and Opera (also it has a bookmarklet for any other browser).
@@ -19,5 +20,5 @@ The only issue that I've found from playing around with this extension is that t
 
 (h/t Brian Danielak)
 
-[1]:http://www.svenkreiss.com/UnicodeIt
-[2]:http://alexeev.org/gmailtex.html
+[1]: http://www.svenkreiss.com/UnicodeIt
+[2]: http://alexeev.org/gmailtex.html
