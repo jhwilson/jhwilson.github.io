@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jhwilson.github.io/sitemap.xml
+Sitemap: https://jhwilson.com/sitemap.xml
