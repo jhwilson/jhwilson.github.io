@@ -13,3 +13,4 @@ vendor
 .idea
 .venv
 *.ai
+.talks-sync.env

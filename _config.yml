@@ -152,6 +152,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  talks:
+    output: true
+    permalink: /talks/:path/
   teaching:
     output: true
     permalink: /teaching/:path/
