@@ -552,7 +552,7 @@
         <li>Hoke et al., arXiv:2509.07977 (2025)</li>
       </ul>
       <div class="question-box" style="margin-top:0.5em;">
-        How can SC survive &mdash; even thrive &mdash;<br>in a quasiperiodic landscape?
+        How can SC survive &mdash; even thrive &mdash;<br>when the wavefunctions are this inhomogeneous?
       </div>
     </div>
     <div style="text-align:center;">
@@ -605,7 +605,7 @@
       </p>
       <div class="key-result" style="margin-top:0.3em;">
         <p class="smallest" style="margin:0; text-align:center;">
-          Topology protects wavefunctions from Anderson localization
+          The effective topology prevents Anderson localization
           &rarr; <strong>spectrum-wide quantum criticality</strong>
         </p>
       </div>
@@ -618,9 +618,9 @@
 <!-- ============================================================ -->
 <section>
   <h2>Multifractality enhances superconductivity</h2>
-  <div class="two-col wide-left" style="margin-top:0.1em;">
+  <div class="two-col" style="margin-top:0.1em;">
     <div>
-      <!-- Wavefunction schematic -->
+      <h3>At the Anderson transition</h3>
       <div class="wf-compare">
         <div class="wf-box">
           <div class="label" style="color:var(--accent-blue);">Extended</div>
@@ -629,18 +629,7 @@
             <rect x="6" y="6" width="108" height="58" rx="2" fill="rgba(96,165,250,0.15)"/>
             <text x="60" y="42" text-anchor="middle" fill="#60a5fa" font-size="10" font-family="Source Sans 3">&#x1D70F;&#x2082; = 2</text>
           </svg>
-          <div style="font-size:0.45em; color:var(--text-dim); margin-top:3px;">Plane wave &mdash; delocalized</div>
-        </div>
-        <div class="wf-box">
-          <div class="label" style="color:#f87171;">Localized</div>
-          <svg width="120" height="70" viewBox="0 0 120 70">
-            <rect x="2" y="2" width="116" height="66" rx="4" fill="none" stroke="#3b4858" stroke-width="1"/>
-            <circle cx="60" cy="35" r="12" fill="rgba(248,113,113,0.5)"/>
-            <circle cx="60" cy="35" r="6" fill="rgba(248,113,113,0.8)"/>
-            <circle cx="60" cy="35" r="2" fill="#f87171"/>
-            <text x="60" y="62" text-anchor="middle" fill="#f87171" font-size="10" font-family="Source Sans 3">&#x1D70F;&#x2082; = 0</text>
-          </svg>
-          <div style="font-size:0.45em; color:var(--text-dim); margin-top:3px;">Exponentially confined</div>
+          <div style="font-size:0.45em; color:var(--text-secondary); margin-top:3px;">Delocalized</div>
         </div>
         <div class="wf-box" style="border-color:rgba(253,208,35,0.25);">
           <div class="label" style="color:var(--lsu-gold);">Multifractal</div>
@@ -658,34 +647,53 @@
             <circle cx="70" cy="15" r="3" fill="rgba(253,208,35,0.2)"/>
             <text x="60" y="68" text-anchor="middle" fill="#FDD023" font-size="10" font-family="Source Sans 3">0 &lt; &#x1D70F;&#x2082; &lt; 2</text>
           </svg>
-          <div style="font-size:0.45em; color:var(--text-dim); margin-top:3px;">Self-similar, critical</div>
+          <div style="font-size:0.45em; color:var(--text-secondary); margin-top:3px;">Critical, self-similar</div>
+        </div>
+        <div class="wf-box">
+          <div class="label" style="color:#f87171;">Localized</div>
+          <svg width="120" height="70" viewBox="0 0 120 70">
+            <rect x="2" y="2" width="116" height="66" rx="4" fill="none" stroke="#3b4858" stroke-width="1"/>
+            <circle cx="60" cy="35" r="12" fill="rgba(248,113,113,0.5)"/>
+            <circle cx="60" cy="35" r="6" fill="rgba(248,113,113,0.8)"/>
+            <circle cx="60" cy="35" r="2" fill="#f87171"/>
+            <text x="60" y="62" text-anchor="middle" fill="#f87171" font-size="10" font-family="Source Sans 3">&#x1D70F;&#x2082; = 0</text>
+          </svg>
+          <div style="font-size:0.45em; color:var(--text-secondary); margin-top:3px;">Exponentially confined</div>
         </div>
       </div>
-
-      <p class="smaller" style="margin-top:0.3em;">
-        Near the Anderson transition, <strong>multifractal wavefunctions boost Cooper pairing</strong>
-        because their spiky density profiles increase the effective interaction matrix elements.
+      <p class="smallest" style="margin-top:0.3em;">
+        At the Anderson transition, wavefunctions are <strong>multifractal</strong>: their spiky,
+        self-similar density profiles <em>enhance</em> Cooper pairing by increasing effective
+        interaction matrix elements.
       </p>
       <p class="ref">Feigel'man et al., PRL 98, 027001 (2007); Zhang &amp; Foster, PRB 106, L180503 (2022)</p>
+    </div>
 
-      <div class="key-result" style="margin-top:0.4em;">
-        <p class="smaller" style="margin:0;">
-          <strong>Why \(s\)-wave?</strong> We use the simplest pairing channel to isolate the
-          <em>normal-state mechanism</em>. The topological protection of phase stiffness
-          is a property of the single-particle spectrum, independent of pairing symmetry.
+    <div>
+      <h3>In TTG: an extended critical phase</h3>
+      <div style="text-align:center;">
+        <div class="fig-card">
+          <img src="figures/fig1_b.png" alt="Fractal wavefunction in TTG"
+               style="width:100%; max-width:300px;">
+        </div>
+        <p class="fig-caption">
+          \(|\psi_E(x,y)|^2\) in quasiperiodic TTG.
+          Self-similar spatial structure.
         </p>
       </div>
-    </div>
-    <div style="text-align:center;">
-      <div class="fig-card">
-        <img src="figures/fig1_b.png" alt="Fractal wavefunction in TTG"
-             style="width:100%; max-width:360px;">
-      </div>
-      <p class="fig-caption">
-        \(|\psi_E(x,y)|^2\) in quasiperiodic TTG<br>
-        (\(\theta_{12}=0.5°\), \(\theta_{23}=0.925°\)).<br>
-        Self-similar spatial structure.
+      <p class="smallest" style="margin-top:0.3em;">
+        In TTG, the effective topology drives this from a fine-tuned
+        transition into a <strong>spectrum-wide multifractal phase</strong>: <em>all</em>
+        normal-state wavefunctions are critical, not just those at isolated energies.
       </p>
+      <div class="key-result" style="margin-top:0.3em;">
+        <p class="smallest" style="margin:0;">
+          <strong>Pairing channel:</strong> we study intervalley \(s\)-wave as the simplest
+          conventional scenario. The critical normal state is a single-particle effect,
+          <em>independent of pairing symmetry</em>.
+          Exotic nodal pairing remains an open direction.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -712,9 +720,9 @@
       </div>
 
       <p class="smaller" style="margin-top:0.3em;">
-        This means quasiperiodicity <strong>does not degrade phase coherence</strong>.
+        The quasiperiodicity <strong>does not degrade phase coherence</strong>.
         The topology pins the normal-state conductivity to \(\sigma_n = 3e^2/\pi h\),
-        preventing the stiffness suppression that plagues conventional inhomogeneous 2D superconductors.
+        so the stiffness suppression you would normally get from spatial inhomogeneity never kicks in.
       </p>
       <p class="ref">Trivedi, Scalettar, Randeria, PRB 54, R3756 (1996)</p>
     </div>
@@ -783,7 +791,7 @@
   <div class="two-col" style="margin-top:0.1em;">
     <div>
       <p class="smallest">
-        The <strong>Kubo conductivity</strong> of the normal state provides a direct probe:
+        The <strong>Kubo conductivity</strong> of the normal state makes the criticality visible:
       </p>
       <ul class="smallest">
         <li>At incommensurate angles, \(\sigma_{xx}\) locks to the <strong>IQHT critical value</strong>
@@ -801,9 +809,10 @@
 
       <div class="key-result" style="margin-top:0.25em;">
         <p class="smallest" style="margin:0;">
-          <strong>Counterintuitive:</strong> pressure <em>reduces</em> normal-state conductivity
-          (more critical) while simultaneously <em>enhancing</em> SC.
-          Reconciled by multifractal pairing enhancement.
+          <strong>Seemingly counterintuitive:</strong> pressure <em>reduces</em> normal-state
+          conductivity (more critical) while <em>enhancing</em> SC.
+          But critical wavefunctions are known to boost Cooper pairing &mdash;
+          what&rsquo;s unique here is that the topology also gives you rigid stiffness.
         </p>
       </div>
     </div>
@@ -846,15 +855,15 @@
       <ul class="smaller">
         <li><strong>Both models agree:</strong> broad triangular region of
           \(\tau_2 \lesssim 1.8\) (critical) away from commensurate lines where \(\tau_2 \approx 2\) (extended)</li>
-        <li>Criticality lives precisely where conductivity locks to the IQHT value</li>
-        <li>The connection to <em>topological surface states</em> is universal &mdash; not an artifact of a particular model</li>
+        <li>The critical region coincides with where conductivity locks to the IQHT value</li>
+        <li>The surface-state connection holds in both models &mdash; not an artifact of the collinear approximation</li>
       </ul>
 
       <div class="key-result" style="margin-top:0.5em;">
         <p class="smaller" style="margin:0;">
-          <strong>Conductivity is the experimentally accessible diagnostic:</strong>
-          measuring \(\sigma_{xx} \sim 0.6\,e^2/h\) across a range of energies
-          directly signals the IQHT critical metal.
+          <strong>The experimental test:</strong>
+          if you measure \(\sigma_{xx} \sim 0.6\,e^2/h\) across a range of energies,
+          you are seeing the IQHT critical metal.
         </p>
       </div>
     </div>
@@ -870,13 +879,14 @@
   <div class="summary-grid">
     <div class="summary-item">
       <div class="item-title">Quasiperiodic superconductor</div>
-      TTG with generic twist angles hosts robust SC with rigid superfluid stiffness,
-      stabilized by emergent topology in the normal state.
+      TTG with generic twist angles has robust SC with rigid superfluid stiffness &mdash;
+      the effective topology in the normal state is doing the work.
     </div>
     <div class="summary-item">
       <div class="item-title">Topological origin</div>
-      TTG simulates a class-AIII surface &mdash; all normal-state wavefunctions are multifractal
-      with IQHT universality, preventing Anderson localization.
+      TTG simulates a class-AIII surface &mdash;
+      all normal-state wavefunctions are multifractal with IQHT universality.
+      No Anderson localization.
     </div>
     <div class="summary-item">
       <div class="item-title">Experimental prediction</div>
@@ -885,8 +895,8 @@
     </div>
     <div class="summary-item">
       <div class="item-title">Universal diagnostics</div>
-      Conductivity \(\sigma_{xx} \approx 0.6\, e^2/h\) is a robust, experimentally accessible
-      fingerprint of the multifractal critical metal.
+      Normal-state \(\sigma_{xx} \approx 0.6\, e^2/h\) over a wide energy window
+      &mdash; the experimental signature of the critical metal.
     </div>
   </div>
 
