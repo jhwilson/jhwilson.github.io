@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twisted Trilayer Graphene, Quasiperiodic Superconductor</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Fira+Code:wght@400;500&display=swap');
+
+  :root {
+    --lsu-purple: #461D7C;
+    --lsu-gold: #FDD023;
+    --lsu-purple-light: #6B3FA0;
+    --lsu-purple-dark: #2E1154;
+    --bg-dark: #0e1117;
+    --bg-card: rgba(255,255,255,0.04);
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-dim: #6b7280;
+    --accent-blue: #60a5fa;
+  }
+
+  .reveal {
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 30px;
+    color: var(--text-primary);
+  }
+
+  .reveal .slides {
+    text-align: left;
+  }
+
+  .reveal .slides section {
+    padding: 30px 40px;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: var(--text-primary);
+  }
+
+  .reveal h2 {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.15em;
+    border-bottom: 3px solid var(--lsu-gold);
+    display: inline-block;
+  }
+
+  .reveal h3 {
+    font-size: 1.0em;
+    color: var(--lsu-gold);
+    margin-bottom: 0.3em;
+    font-weight: 600;
+  }
+
+  .reveal p, .reveal li {
+    line-height: 1.45;
+    color: var(--text-primary);
+  }
+
+  .reveal ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.3em 0;
+  }
+
+  .reveal ul li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.35em;
+    font-size: 0.85em;
+  }
+
+  .reveal ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--lsu-gold);
+  }
+
+  .reveal .dim { color: var(--text-secondary); }
+  .reveal .gold { color: var(--lsu-gold); }
+  .reveal .purple-text { color: var(--lsu-purple-light); }
+  .reveal .accent { color: var(--accent-blue); }
+
+  .reveal strong {
+    color: var(--lsu-gold);
+    font-weight: 700;
+  }
+
+  .reveal em {
+    color: var(--accent-blue);
+    font-style: italic;
+  }
+
+  .reveal .math-highlight {
+    background: rgba(253, 208, 35, 0.08);
+    border-left: 3px solid var(--lsu-gold);
+    padding: 0.4em 0.8em;
+    margin: 0.5em 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95em;
+  }
+
+  .reveal section img {
+    border: none;
+    box-shadow: none;
+    border-radius: 6px;
+  }
+
+  .fig-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .fig-card img {
+    display: block;
+    border-radius: 4px;
+  }
+
+  .reveal .fig-caption {
+    font-size: 0.55em;
+    color: var(--text-secondary);
+    margin-top: 0.2em;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* Title slide */
+  .title-slide {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  .title-slide h1 {
+    font-size: 1.6em;
+    line-height: 1.15;
+    margin-top: auto;
+    margin-bottom: 0.15em;
+    border-bottom: none;
+  }
+  .title-slide .subtitle {
+    font-size: 0.6em;
+    color: var(--lsu-gold);
+    margin: 0.2em 0 0.6em;
+    font-weight: 300;
+  }
+  .title-slide .authors {
+    font-size: 0.55em;
+    color: var(--text-secondary);
+    margin-bottom: 0.3em;
+    line-height: 1.5;
+  }
+  .title-slide .authors .speaker {
+    color: var(--lsu-gold);
+    font-weight: 600;
+  }
+  .title-slide .meta {
+    font-size: 0.45em;
+    color: var(--text-dim);
+    margin-top: 0.5em;
+    line-height: 1.6;
+  }
+  .title-slide .onbehalf {
+    font-size: 0.5em;
+    color: var(--accent-blue);
+    font-style: italic;
+    margin-top: 0.3em;
+  }
+  .title-slide .lsu-bar {
+    display: inline-block;
+    height: 4px;
+    width: 200px;
+    background: linear-gradient(90deg, var(--lsu-purple), var(--lsu-gold));
+    border-radius: 2px;
+    margin: 0.4em auto;
+  }
+  .title-slide .logo-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1em;
+  }
+  .title-slide .logos-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .title-slide .logos-left img {
+    height: 48px;
+    border-radius: 0;
+  }
+  .title-slide .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    font-size: 0.32em;
+    color: var(--text-secondary);
+    text-align: left;
+    line-height: 1.3;
+  }
+  .title-slide .qr-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-slide .qr-block img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+  }
+  .title-slide .qr-label {
+    font-size: 0.32em;
+    color: var(--text-dim);
+    text-align: right;
+    line-height: 1.3;
+  }
+
+  /* Collaborator cards */
+  .collab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 0.4em;
+  }
+  .collab-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+  .collab-card:hover {
+    border-color: var(--lsu-gold);
+  }
+  .collab-card .initials {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--lsu-purple), var(--lsu-purple-light));
+    color: var(--lsu-gold);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.1em;
+    margin: 0 auto 10px;
+    border: 2px solid rgba(253,208,35,0.3);
+    overflow: hidden;
+  }
+  .collab-card .initials img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .collab-card .name {
+    font-weight: 600; font-size: 0.7em; color: var(--text-primary);
+  }
+  .collab-card .affil {
+    font-size: 0.52em; color: var(--text-secondary); margin-top: 4px;
+  }
+  .funding {
+    font-size: 0.48em;
+    color: var(--text-dim);
+    text-align: center;
+    margin-top: 1em;
+    line-height: 1.5;
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .two-col > * {
+    min-width: 0;
+    overflow: visible;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .two-col.wide-right {
+    grid-template-columns: 2fr 3fr;
+  }
+  .two-col.wide-left {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  /* Question box */
+  .question-box {
+    background: linear-gradient(135deg, rgba(70,29,124,0.25), rgba(70,29,124,0.10));
+    border: 1px solid rgba(107,63,160,0.4);
+    border-radius: 10px;
+    padding: 0.5em 0.8em;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 0.4em;
+    font-weight: 600;
+    color: var(--lsu-gold);
+  }
+
+  /* Key result box */
+  .key-result {
+    background: rgba(253,208,35,0.06);
+    border: 1px solid rgba(253,208,35,0.2);
+    border-radius: 10px;
+    padding: 0.5em 0.8em;
+    margin: 0.4em 0;
+  }
+
+  /* Wavefunction schematic */
+  .wf-compare {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 0.3em 0;
+  }
+  .wf-box {
+    text-align: center;
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 10px 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .wf-box .label {
+    font-size: 0.6em;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .wf-box svg {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Summary list with icons */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 0.3em;
+  }
+  .summary-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 0.72em;
+    line-height: 1.4;
+    border-left: 3px solid var(--lsu-gold);
+  }
+  .summary-item .item-title {
+    font-weight: 700;
+    color: var(--lsu-gold);
+    margin-bottom: 4px;
+    font-size: 1.05em;
+  }
+
+  /* Arrow connector */
+  .flow-arrow {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--lsu-gold);
+    margin: 0.15em 0;
+    letter-spacing: 0.3em;
+  }
+
+  /* Prediction callout */
+  .prediction {
+    background: linear-gradient(135deg, rgba(253,208,35,0.12), rgba(253,208,35,0.04));
+    border: 2px solid rgba(253,208,35,0.3);
+    border-radius: 10px;
+    padding: 0.5em 0.8em;
+    margin: 0.3em 0;
+    font-size: 0.85em;
+  }
+  .prediction .pred-label {
+    color: var(--lsu-gold);
+    font-weight: 700;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2em;
+  }
+
+  /* Ref style */
+  .ref {
+    font-size: 0.52em;
+    color: var(--text-secondary);
+  }
+
+  /* Slide number styling */
+  .reveal .slide-number {
+    color: var(--text-dim);
+    font-size: 14px;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .arxiv-footer {
+    position: fixed;
+    bottom: 12px;
+    left: 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: 'Source Sans 3', sans-serif;
+    opacity: 0.85;
+    z-index: 30;
+    letter-spacing: 0.03em;
+  }
+  .arxiv-footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .arxiv-footer a:hover {
+    color: var(--accent-blue);
+  }
+
+  /* Progress bar */
+  .reveal .progress {
+    height: 3px;
+    color: var(--lsu-gold);
+  }
+
+  /* Background gradient */
+  body {
+    background: var(--bg-dark);
+  }
+  .reveal .slide-background {
+    background: radial-gradient(ellipse at 30% 20%, rgba(70,29,124,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(70,29,124,0.06) 0%, transparent 50%),
+                var(--bg-dark);
+  }
+
+  /* Override MathJax color */
+  .reveal .MathJax, .reveal mjx-container {
+    color: var(--text-primary) !important;
+  }
+
+  /* Smaller font helper */
+  .smaller { font-size: 0.82em; }
+  .smallest { font-size: 0.7em; }
+
+  .reveal section .fragment.highlight-gold.visible {
+    color: var(--lsu-gold);
+  }
+</style>
+</head>
+
+<body>
+<div class="arxiv-footer"><a href="https://arxiv.org/abs/2512.22340">arXiv:2512.22340</a></div>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================ -->
+<!-- SLIDE 1: TITLE -->
+<!-- ============================================================ -->
+<section class="title-slide" data-background-gradient="radial-gradient(ellipse at 50% 30%, rgba(70,29,124,0.22) 0%, transparent 55%), radial-gradient(ellipse at 50% 100%, rgba(70,29,124,0.10) 0%, transparent 50%), #0e1117">
+
+  <h1>Twisted Trilayer Graphene,<br>Quasiperiodic Superconductor</h1>
+  <div class="lsu-bar"></div>
+  <div class="authors">
+    Xinghai Zhang&ensp;&middot;&ensp;Ziyan Zhu&ensp;&middot;&ensp;<span class="speaker">Justin H. Wilson</span>&ensp;&middot;&ensp;Matthew S. Foster
+  </div>
+  <div class="onbehalf">Presented by J.H. Wilson on behalf of Xinghai Zhang</div>
+  <div class="meta">
+    APS Global Summit &middot; Denver &middot; March 2026<br>
+    <a href="https://arxiv.org/abs/2512.22340" style="color: var(--accent-blue); font-size:0.9em;">arXiv:2512.22340</a>
+  </div>
+
+  <div class="logo-strip">
+    <div class="logos-left">
+      <img src="figures/lsu_logo.svg" alt="LSU" style="height:52px;">
+      <div class="logo-text-group">
+        <span>Dept. of Physics &amp; Astronomy</span>
+        <span>Center for Computation &amp; Technology</span>
+      </div>
+      <img src="figures/nsf_logo.svg" alt="NSF" style="height:44px;">
+    </div>
+    <div class="qr-block">
+      <div class="qr-label">Scan for paper<br><b>arXiv:2512.22340</b></div>
+      <img src="figures/qr_arxiv.png" alt="QR code for arXiv:2512.22340">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2: COLLABORATORS -->
+<!-- ============================================================ -->
+<section>
+  <h2>Collaborators</h2>
+  <div class="collab-grid">
+    <div class="collab-card">
+      <div class="initials"><img src="photos/Xinghai.jpg" alt="Xinghai Zhang"></div>
+      <div class="name">Xinghai Zhang</div>
+      <div class="affil">Paul Scherrer Institute / Rice University</div>
+    </div>
+    <div class="collab-card">
+      <div class="initials"><img src="figures/ziyan_zhu.jpg" alt="Ziyan Zhu"></div>
+      <div class="name">Ziyan Zhu</div>
+      <div class="affil">Boston College</div>
+    </div>
+    <div class="collab-card">
+      <div class="initials"><img src="figures/matthew_foster.jpg" alt="Matthew S. Foster"></div>
+      <div class="name">Matthew S. Foster</div>
+      <div class="affil">Rice University</div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:0.6em; font-size:0.62em; color:var(--text-secondary);">
+    Builds on our previous work on quasiperiodic twisted bilayer graphene:<br>
+    <span class="dim">Zhang, Wilson, Foster &mdash; PRB <b>111</b>, 024207 (2025)</span>
+  </p>
+  <div class="funding">
+    Supported by: NSF DMR-2238895 &middot; Welch Foundation C-1809 &middot; ERC Horizon 2020 &middot; LSU HPC
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3: THE PUZZLE -->
+<!-- ============================================================ -->
+<section>
+  <h2>Twisted trilayer graphene is quasiperiodic</h2>
+  <div class="two-col wide-right" style="margin-top:0.2em;">
+    <div>
+      <p class="smaller">
+        Three graphene layers with <em>two independent</em> twist angles
+        \(\theta_{12}\) and \(\theta_{23}\) produce interfering moir&eacute; patterns.
+      </p>
+      <p class="smaller">
+        Generically <strong>quasiperiodic</strong> &mdash; no translational symmetry on the moir&eacute; scale.
+      </p>
+      <p class="smaller" style="margin-top:0.5em;">
+        Yet experiments observe <strong>superconductivity</strong> in TTG:
+      </p>
+      <ul class="smallest">
+        <li>Uri et al., <em>Nature</em> <b>620</b>, 762 (2023)</li>
+        <li>Xia et al., arXiv:2509.03583 (2025)</li>
+        <li>Hoke et al., arXiv:2509.07977 (2025)</li>
+      </ul>
+      <div class="question-box" style="margin-top:0.5em;">
+        How can SC survive &mdash; even thrive &mdash;<br>in a quasiperiodic landscape?
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="fig-card">
+        <img src="figures/fig1_ab.png" alt="TTG structure and fractal wavefunction"
+             style="width:100%; max-width:400px;">
+      </div>
+      <p class="fig-caption">(a) Helical TTG. (b) Multifractal \(|\psi|^2\).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4: PREVIOUS WORK & KEY INSIGHT -->
+<!-- ============================================================ -->
+<section>
+  <h2>Previous work &amp; the key insight</h2>
+  <div class="two-col" style="margin-top:0.1em;">
+    <div>
+      <h3>Quasiperiodic TBG</h3>
+      <p class="smallest">
+        In quasiperiodic twisted <em>bilayer</em> graphene, we showed that
+        <strong>critical filaments</strong> of multifractal wavefunctions thread through parameter space
+        and <em>enhance</em> superconducting pairing.
+      </p>
+      <p class="ref">Zhang, Wilson, Foster &mdash; PRB 111, 024207 (2025)</p>
+
+      <h3 style="margin-top:0.3em;">Magic-angle semimetals</h3>
+      <p class="smallest">
+        Band nodes + incommensurate potentials generate <em>eigenstate criticality</em>
+        &mdash; flat bands and multifractal wavefunctions at magic couplings.
+      </p>
+      <p class="ref">Fu, K&ouml;nig, Wilson, Chou, Pixley &mdash; npj QM 5, 71 (2020)</p>
+
+      <h3 style="margin-top:0.3em;">The connection</h3>
+      <p class="smallest">
+        In the chiral limit, TTG&rsquo;s Dirac fermions couple via
+        <strong>non-Abelian gauge potentials</strong> \(\Rightarrow\) the system
+        <em>simulates the surface of a 3D class-AIII topological superconductor</em>.
+      </p>
+    </div>
+    <div style="text-align:center;">
+      <div class="fig-card">
+        <img src="figures/fig0_tbg.png" alt="SC enhancement in quasiperiodic TBG"
+             style="width:100%; max-width:400px;">
+      </div>
+      <p class="fig-caption">\(\Delta\) and DOS in quasiperiodic TBG.
+        (a) Periodic: SC at magic angle only.
+        (b) Quasiperiodic: SC enhanced broadly.
+      </p>
+      <div class="key-result" style="margin-top:0.3em;">
+        <p class="smallest" style="margin:0; text-align:center;">
+          Topology protects wavefunctions from Anderson localization
+          &rarr; <strong>spectrum-wide quantum criticality</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5: MULTIFRACTALITY & SC MECHANISM -->
+<!-- ============================================================ -->
+<section>
+  <h2>Multifractality enhances superconductivity</h2>
+  <div class="two-col wide-left" style="margin-top:0.1em;">
+    <div>
+      <!-- Wavefunction schematic -->
+      <div class="wf-compare">
+        <div class="wf-box">
+          <div class="label" style="color:var(--accent-blue);">Extended</div>
+          <svg width="120" height="70" viewBox="0 0 120 70">
+            <rect x="2" y="2" width="116" height="66" rx="4" fill="none" stroke="#3b4858" stroke-width="1"/>
+            <rect x="6" y="6" width="108" height="58" rx="2" fill="rgba(96,165,250,0.15)"/>
+            <text x="60" y="42" text-anchor="middle" fill="#60a5fa" font-size="10" font-family="Source Sans 3">&#x1D70F;&#x2082; = 2</text>
+          </svg>
+          <div style="font-size:0.45em; color:var(--text-dim); margin-top:3px;">Plane wave &mdash; delocalized</div>
+        </div>
+        <div class="wf-box">
+          <div class="label" style="color:#f87171;">Localized</div>
+          <svg width="120" height="70" viewBox="0 0 120 70">
+            <rect x="2" y="2" width="116" height="66" rx="4" fill="none" stroke="#3b4858" stroke-width="1"/>
+            <circle cx="60" cy="35" r="12" fill="rgba(248,113,113,0.5)"/>
+            <circle cx="60" cy="35" r="6" fill="rgba(248,113,113,0.8)"/>
+            <circle cx="60" cy="35" r="2" fill="#f87171"/>
+            <text x="60" y="62" text-anchor="middle" fill="#f87171" font-size="10" font-family="Source Sans 3">&#x1D70F;&#x2082; = 0</text>
+          </svg>
+          <div style="font-size:0.45em; color:var(--text-dim); margin-top:3px;">Exponentially confined</div>
+        </div>
+        <div class="wf-box" style="border-color:rgba(253,208,35,0.25);">
+          <div class="label" style="color:var(--lsu-gold);">Multifractal</div>
+          <svg width="120" height="70" viewBox="0 0 120 70">
+            <rect x="2" y="2" width="116" height="66" rx="4" fill="none" stroke="#3b4858" stroke-width="1"/>
+            <circle cx="35" cy="25" r="8" fill="rgba(253,208,35,0.35)"/>
+            <circle cx="35" cy="25" r="3" fill="rgba(253,208,35,0.7)"/>
+            <circle cx="80" cy="40" r="10" fill="rgba(253,208,35,0.25)"/>
+            <circle cx="80" cy="40" r="5" fill="rgba(253,208,35,0.5)"/>
+            <circle cx="80" cy="40" r="2" fill="rgba(253,208,35,0.8)"/>
+            <circle cx="55" cy="55" r="6" fill="rgba(253,208,35,0.3)"/>
+            <circle cx="55" cy="55" r="2" fill="rgba(253,208,35,0.6)"/>
+            <circle cx="100" cy="18" r="5" fill="rgba(253,208,35,0.25)"/>
+            <circle cx="20" cy="50" r="4" fill="rgba(253,208,35,0.2)"/>
+            <circle cx="70" cy="15" r="3" fill="rgba(253,208,35,0.2)"/>
+            <text x="60" y="68" text-anchor="middle" fill="#FDD023" font-size="10" font-family="Source Sans 3">0 &lt; &#x1D70F;&#x2082; &lt; 2</text>
+          </svg>
+          <div style="font-size:0.45em; color:var(--text-dim); margin-top:3px;">Self-similar, critical</div>
+        </div>
+      </div>
+
+      <p class="smaller" style="margin-top:0.3em;">
+        Near the Anderson transition, <strong>multifractal wavefunctions boost Cooper pairing</strong>
+        because their spiky density profiles increase the effective interaction matrix elements.
+      </p>
+      <p class="ref">Feigel'man et al., PRL 98, 027001 (2007); Zhang &amp; Foster, PRB 106, L180503 (2022)</p>
+
+      <div class="key-result" style="margin-top:0.4em;">
+        <p class="smaller" style="margin:0;">
+          <strong>Why \(s\)-wave?</strong> We use the simplest pairing channel to isolate the
+          <em>normal-state mechanism</em>. The topological protection of phase stiffness
+          is a property of the single-particle spectrum, independent of pairing symmetry.
+        </p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="fig-card">
+        <img src="figures/fig1_b.png" alt="Fractal wavefunction in TTG"
+             style="width:100%; max-width:360px;">
+      </div>
+      <p class="fig-caption">
+        \(|\psi_E(x,y)|^2\) in quasiperiodic TTG<br>
+        (\(\theta_{12}=0.5°\), \(\theta_{23}=0.925°\)).<br>
+        Self-similar spatial structure.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6: ROBUST SC -->
+<!-- ============================================================ -->
+<section>
+  <h2>Robust superconductivity across twist angles</h2>
+  <div class="two-col" style="margin-top:0.1em;">
+    <div>
+      <p class="smaller">
+        In the chiral limit (\(\alpha=0\), \(w_\text{AB}=110\) meV):
+      </p>
+      <ul class="smaller">
+        <li>SC order parameter \(\Delta\) is <strong>finite across a broad range</strong> of
+          \(\theta_{23}\), not just at commensurate (magic) angles</li>
+        <li>DOS and \(\Delta\) <em>do not track each other</em> &mdash; SC is not simply flat-band physics</li>
+      </ul>
+
+      <div class="math-highlight" style="margin-top:0.5em;">
+        Superfluid stiffness follows the <strong>ideal Dirac</strong> prediction:
+        \[ D_s / \pi = 3\Delta / \pi \]
+      </div>
+
+      <p class="smaller" style="margin-top:0.3em;">
+        This means quasiperiodicity <strong>does not degrade phase coherence</strong>.
+        The topology pins the normal-state conductivity to \(\sigma_n = 3e^2/\pi h\),
+        preventing the stiffness suppression that plagues conventional inhomogeneous 2D superconductors.
+      </p>
+      <p class="ref">Trivedi, Scalettar, Randeria, PRB 54, R3756 (1996)</p>
+    </div>
+    <div style="text-align:center;">
+      <div class="fig-card">
+        <img src="figures/fig1_ce.png" alt="SC order parameter and superfluid stiffness"
+             style="width:100%; max-width:380px;">
+      </div>
+      <p class="fig-caption">
+        (c) \(\Delta\) and DOS \(\nu(0)\) vs. \(\theta_{23}\)<br>
+        (e) Superfluid stiffness \(D_s/\pi\); dashed: ideal Dirac
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7: PRESSURE PREDICTION -->
+<!-- ============================================================ -->
+<section>
+  <h2>Prediction: Pressure enhances SC</h2>
+  <div class="two-col" style="margin-top:0.1em; grid-template-columns: 2fr 3fr;">
+    <div style="text-align:center;">
+      <div class="fig-card" style="margin-bottom:8px;">
+        <img src="figures/fig1_df.png" alt="SC at high pressure - chiral"
+             style="width:100%; max-width:320px;">
+      </div>
+      <div class="fig-card">
+        <img src="figures/fig1_gh.png" alt="SC broken chiral symmetry"
+             style="width:100%; max-width:320px;">
+      </div>
+      <p class="fig-caption">
+        (d,f) Chiral, \(w_\text{AB}=2w_0\): \(\Delta\) uniform.<br>
+        (g,h) Broken chiral: SC <em>enhanced</em>.
+      </p>
+    </div>
+    <div>
+      <p class="smallest">
+        Doubling interlayer coupling (\(w_\text{AB}\!=\!2w_0\!=\!220\) meV, achievable
+        with <strong>hydrostatic pressure</strong>):
+      </p>
+      <ul class="smallest">
+        <li>\(\Delta\) becomes <strong>uniform across twist angles</strong> &mdash; no fine-tuning needed</li>
+        <li>Stiffness follows ideal Dirac: \(D_s/\pi \approx 3\Delta/\pi\)</li>
+        <li>With <em>broken chiral symmetry</em> (\(\alpha\!=\!0.7\)),
+          SC is <em>further enhanced</em> at incommensurate angles</li>
+      </ul>
+
+      <div class="prediction" style="margin-top:0.5em;">
+        <div class="pred-label">Experimental prediction</div>
+        <p class="smaller" style="margin:0;">
+          Applying pressure to TTG should <strong>strengthen superconductivity</strong>
+          and make it observable across a wider range of twist angles.
+        </p>
+        <p class="ref" style="margin-top:0.3em;">Accessible pressures: Carr et al. PRB 98 (2018); Yankowitz et al. Science 363 (2019)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 8: CONDUCTIVITY -->
+<!-- ============================================================ -->
+<section>
+  <h2>Conductivity: fingerprint of criticality</h2>
+  <div class="two-col" style="margin-top:0.1em;">
+    <div>
+      <p class="smallest">
+        The <strong>Kubo conductivity</strong> of the normal state provides a direct probe:
+      </p>
+      <ul class="smallest">
+        <li>At incommensurate angles, \(\sigma_{xx}\) locks to the <strong>IQHT critical value</strong>
+          \(\approx 0.6\, e^2/h\) across a wide energy window</li>
+        <li><em>Spectrum-wide quantum criticality</em>: not just at isolated energies
+          (unlike the usual quantum Hall effect)</li>
+        <li>At doubled coupling (\(w_\text{AB}\!=\!2w_0\)), criticality is <strong>stabilized even with broken chiral symmetry</strong></li>
+      </ul>
+
+      <p class="smallest" style="margin-top:0.3em;">
+        KPM convergence distinguishes the regimes: critical states
+        <strong>plateau</strong> with increasing polynomial order \(N_\mathcal{C}\),
+        while ballistic states grow without saturating.
+      </p>
+
+      <div class="key-result" style="margin-top:0.25em;">
+        <p class="smallest" style="margin:0;">
+          <strong>Counterintuitive:</strong> pressure <em>reduces</em> normal-state conductivity
+          (more critical) while simultaneously <em>enhancing</em> SC.
+          Reconciled by multifractal pairing enhancement.
+        </p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="fig-card">
+        <img src="figures/fig2.png" alt="Normal-state conductivity"
+             style="width:100%; max-width:400px;">
+      </div>
+      <p class="fig-caption">
+        Normal-state \(\sigma_{xx}\) vs energy for various \(\theta_{23}\).
+        Red/blue dashed: WZW and IQHT critical values.
+        (e,f) KPM convergence at incommensurate angle.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 9: MULTIFRACTAL PHASE DIAGRAM -->
+<!-- ============================================================ -->
+<section>
+  <h2>Universal across models</h2>
+  <div class="two-col" style="margin-top:0.1em;">
+    <div style="text-align:center;">
+      <div class="fig-card">
+        <img src="figures/fig4.png" alt="Multifractal dimension phase diagram"
+             style="width:100%; max-width:340px;">
+      </div>
+      <p class="fig-caption">
+        (a) Real-space \(\tau_2\) in the collinear model.<br>
+        (b) Momentum-space \(\tau_2^k\) in the non-collinear model.<br>
+        White dashed: commensurate lines.
+      </p>
+    </div>
+    <div>
+      <p class="smaller">
+        The multifractal exponent \(\tau_2\) (from the IPR \(P_2 \sim L^{-\tau_2}\))
+        maps out the critical phase:
+      </p>
+      <ul class="smaller">
+        <li><strong>Both models agree:</strong> broad triangular region of
+          \(\tau_2 \lesssim 1.8\) (critical) away from commensurate lines where \(\tau_2 \approx 2\) (extended)</li>
+        <li>Criticality lives precisely where conductivity locks to the IQHT value</li>
+        <li>The connection to <em>topological surface states</em> is universal &mdash; not an artifact of a particular model</li>
+      </ul>
+
+      <div class="key-result" style="margin-top:0.5em;">
+        <p class="smaller" style="margin:0;">
+          <strong>Conductivity is the experimentally accessible diagnostic:</strong>
+          measuring \(\sigma_{xx} \sim 0.6\,e^2/h\) across a range of energies
+          directly signals the IQHT critical metal.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 10: SUMMARY -->
+<!-- ============================================================ -->
+<section data-background-gradient="radial-gradient(ellipse at 50% 50%, rgba(70,29,124,0.18) 0%, transparent 60%), #0e1117">
+  <h2>Summary &amp; outlook</h2>
+
+  <div class="summary-grid">
+    <div class="summary-item">
+      <div class="item-title">Quasiperiodic superconductor</div>
+      TTG with generic twist angles hosts robust SC with rigid superfluid stiffness,
+      stabilized by emergent topology in the normal state.
+    </div>
+    <div class="summary-item">
+      <div class="item-title">Topological origin</div>
+      TTG simulates a class-AIII surface &mdash; all normal-state wavefunctions are multifractal
+      with IQHT universality, preventing Anderson localization.
+    </div>
+    <div class="summary-item">
+      <div class="item-title">Experimental prediction</div>
+      Hydrostatic pressure stabilizes criticality and strengthens SC
+      across a wider range of twist angles.
+    </div>
+    <div class="summary-item">
+      <div class="item-title">Universal diagnostics</div>
+      Conductivity \(\sigma_{xx} \approx 0.6\, e^2/h\) is a robust, experimentally accessible
+      fingerprint of the multifractal critical metal.
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:0.6em;">
+    <div class="lsu-bar" style="width:300px; height:3px; display:inline-block; background:linear-gradient(90deg, var(--lsu-purple), var(--lsu-gold)); border-radius:2px;"></div>
+  </div>
+
+  <p style="text-align:center; font-size:0.6em; color:var(--text-secondary); margin-top:0.4em;">
+    <b>Future directions:</b> Nodal / exotic pairing &middot; TMD multilayers &middot; Experimental verification via transport
+  </p>
+
+  <div style="text-align:center; margin-top:0.4em;">
+    <div style="display:inline-flex; align-items:center; gap:14px;">
+      <div>
+        <p style="font-size:0.55em; color:var(--text-secondary); margin:0;">
+          Zhang, Zhu, Wilson, Foster &mdash; <a href="https://arxiv.org/abs/2512.22340" style="color:var(--accent-blue);">arXiv:2512.22340</a>
+        </p>
+        <p style="font-size:0.48em; color:var(--text-secondary); margin:0.15em 0 0;">
+          Built on: Zhang, Wilson, Foster PRB 111, 024207 (2025)
+        </p>
+        <p style="font-size:0.65em; color:var(--lsu-gold); font-weight:600; margin:0.3em 0 0;">
+          Thank you!
+        </p>
+      </div>
+      <img src="figures/qr_arxiv.png" alt="QR code for arXiv:2512.22340"
+           style="width:88px; height:88px; border-radius:4px;">
+    </div>
+  </div>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    center: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    math: {
+      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+      tex: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['\\[','\\]']],
+      }
+    },
+    plugins: [ RevealMath.MathJax3 ]
+  });
+</script>
+</body>
+</html>

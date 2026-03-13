@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-talks",
+          title: "talks",
+          description: "talks, seminars, and conference presentations",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/talks/";
+          },
         },{id: "nav-teaching",
           title: "teaching",
           description: "Materials for courses",
@@ -199,6 +206,11 @@ ninja.data = [{
           description: "understanding topology, disorder, and incommensuration",
           section: "Projects",handler: () => {
               window.location.href = "/projects/quantum-materials/";
+            },},{id: "talks-twisted-trilayer-graphene-quasiperiodic-superconductor",
+          title: 'Twisted Trilayer Graphene, Quasiperiodic Superconductor',
+          description: "APS Global Summit talk on superconductivity in quasiperiodic twisted trilayer graphene.",
+          section: "Talks",handler: () => {
+              window.location.href = "/talks/ttlg-quasiperiodic/";
             },},{id: "teaching-phys-7221-fall-2022",
           title: 'PHYS 7221 - Fall 2022',
           description: "Classical Mechanics Fall 2022",
