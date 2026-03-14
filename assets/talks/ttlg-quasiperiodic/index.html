@@ -522,7 +522,7 @@
   </div>
   <p style="text-align:center; margin-top:0.6em; font-size:0.62em; color:var(--text-secondary);">
     Builds on our previous work on quasiperiodic twisted bilayer graphene:<br>
-    <span class="dim">Zhang, Wilson, Foster &mdash; PRB <b>111</b>, 024207 (2025)</span>
+    <span class="dim">Zhang, JHW, Foster &mdash; PRB <b>111</b>, 024207 (2025)</span>
   </p>
   <div class="funding">
     Supported by: NSF DMR-2238895 &middot; Welch Foundation C-1809 &middot; ERC Horizon 2020 &middot; LSU HPC
@@ -580,19 +580,19 @@
         The key: in the chiral limit, the Dirac fermions
         <em>simulate the surface of a 3D class-CI topological superconductor</em>.
       </p>
-      <p class="ref">Zhang, Wilson, Foster &mdash; PRB 111, 024207 (2025)</p>
+      <p class="ref">Zhang, JHW, Foster &mdash; PRB 111, 024207 (2025)</p>
 
       <h3 style="margin-top:0.3em;">Magic-angle semimetals</h3>
       <p class="smallest">
         Band nodes + incommensurate potentials generate <em>eigenstate criticality</em>
         &mdash; flat bands and multifractal wavefunctions at magic couplings.
       </p>
-      <p class="ref">Fu, K&ouml;nig, Wilson, Chou, Pixley &mdash; npj QM 5, 71 (2020)</p>
+      <p class="ref">Fu, K&ouml;nig, JHW, Chou, Pixley &mdash; npj QM 5, 71 (2020)</p>
 
-      <h3 style="margin-top:0.2em;">TTG: class AIII, stronger criticality</h3>
+      <h3 style="margin-top:0.2em;">TTG: a simulator of class AIII </h3>
       <p class="smallest" style="margin-bottom:0;">
         The additional moir&eacute; pattern in TTG changes the symmetry class to <em>AIII</em>
-        via <strong>non-Abelian gauge potentials</strong>, with more robust criticality.
+        via <strong>non-Abelian gauge potentials</strong>, with criticality of the integer quantum Hall plateau transition at finite energies.
       </p>
     </div>
     <div style="text-align:center;">
@@ -683,9 +683,9 @@
         </p>
       </div>
       <p class="smallest" style="margin-top:0.3em;">
-        In TTG, the effective topology drives this from a fine-tuned
+        In TTG, the effective topology drives this from a property of a phase
         transition into a <strong>spectrum-wide multifractal phase</strong>: <em>all</em>
-        normal-state wavefunctions are critical, not just those at isolated energies.
+        normal-state wavefunctions are critical (for small twist angles $\theta_{12}+\theta_{23}\approx 1.5^\circ$), not just those at isolated energies.
       </p>
       <div class="key-result" style="margin-top:0.3em;">
         <p class="smallest" style="margin:0;">
@@ -730,7 +730,7 @@
     <div style="text-align:center;">
       <div class="fig-card">
         <img src="figures/fig1_ce.png" alt="SC order parameter and superfluid stiffness"
-             style="width:100%; max-width:380px;">
+             style="width:100%; max-width:440px;">
       </div>
       <p class="fig-caption">
         (c) \(\Delta\) and DOS \(\nu(0)\) vs. \(\theta_{23}\)<br>
@@ -843,25 +843,35 @@
              style="width:100%; max-width:340px;">
       </div>
       <p class="fig-caption">
-        (a) Real-space \(\tau_2\) in the collinear model.<br>
-        (b) Momentum-space \(\tau_2^k\) in the non-collinear model.<br>
-        White dashed: commensurate lines.
+        (a) Real-space \(\tau_2\), collinear.
+        (b) Momentum-space \(\tau_2^k\), non-collinear.
       </p>
     </div>
     <div>
-      <p class="smaller">
-        The multifractal exponent \(\tau_2\) (from the IPR \(P_2 \sim L^{-\tau_2}\))
-        maps out the critical phase:
+      <p class="smallest">
+        We use a <strong>collinear</strong> model: moir&eacute; reciprocal vectors aligned in direction,
+        differing only in magnitude &mdash; this lets us reach much larger system sizes.
+        The <strong>non-collinear</strong> model keeps the full directional mismatch
+        but is more expensive computationally.
       </p>
-      <ul class="smaller">
-        <li><strong>Both models agree:</strong> broad triangular region of
-          \(\tau_2 \lesssim 1.8\) (critical) away from commensurate lines where \(\tau_2 \approx 2\) (extended)</li>
-        <li>The critical region coincides with where conductivity locks to the IQHT value</li>
-        <li>The surface-state connection holds in both models &mdash; not an artifact of the collinear approximation</li>
+      <p class="ref">Non-collinear: Zhu, Carr, Massatt, Luskin, Kaxiras &mdash; PRL 125, 116404 (2020)</p>
+
+      <p class="smallest" style="margin-top:0.2em;">
+        The IPR \(P_2 \sim L^{-\tau_2}\) maps out the critical phase.
+        The collinear model gives real-space \(\tau_2\)
+        (small = critical); the non-collinear gives momentum-space \(\tau_2^k\)
+        (large = critical). The trends are inverted, but they identify
+        the <strong>same critical and ballistic regions</strong> in twist-angle space.
+      </p>
+
+      <ul class="smallest">
+        <li>Both: broad triangular region of criticality
+          away from commensurate lines where \(\tau_2 \approx 2\) (extended)</li>
+        <li>The critical region is exactly where \(\sigma_{xx}\) locks to the IQHT value</li>
       </ul>
 
-      <div class="key-result" style="margin-top:0.5em;">
-        <p class="smaller" style="margin:0;">
+      <div class="key-result" style="margin-top:0.3em;">
+        <p class="smallest" style="margin:0;">
           <strong>The experimental test:</strong>
           if you measure \(\sigma_{xx} \sim 0.6\,e^2/h\) across a range of energies,
           you are seeing the IQHT critical metal.
@@ -913,10 +923,10 @@
     <div style="display:inline-flex; align-items:center; gap:14px;">
       <div>
         <p style="font-size:0.55em; color:var(--text-secondary); margin:0;">
-          Zhang, Zhu, Wilson, Foster &mdash; <a href="https://arxiv.org/abs/2512.22340" style="color:var(--accent-blue);">arXiv:2512.22340</a>
+          Zhang, Zhu, JHW, Foster &mdash; <a href="https://arxiv.org/abs/2512.22340" style="color:var(--accent-blue);">arXiv:2512.22340</a>
         </p>
         <p style="font-size:0.48em; color:var(--text-secondary); margin:0.15em 0 0;">
-          Built on: Zhang, Wilson, Foster PRB 111, 024207 (2025)
+          Built on: Zhang, JHW, Foster PRB 111, 024207 (2025)
         </p>
         <p style="font-size:0.65em; color:var(--lsu-gold); font-weight:600; margin:0.3em 0 0;">
           Thank you!
