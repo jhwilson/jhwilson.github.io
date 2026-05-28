@@ -186,6 +186,16 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2022-05-02-newPRA/";
+            },},{id: "news-promoted-to-associate-professor-with-tenure",
+          title: 'Promoted to Associate Professor with tenure',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-04-14-tenure/";
+            },},{id: "news-universality-of-stochastic-control-of-quantum-chaos-with-measurement-and-feedback-published-in-physical-review-letters",
+          title: 'Universality of Stochastic Control of Quantum Chaos with Measurement and Feedback published in...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026-05-26-newPRL/";
             },},{id: "projects-analog-gravity",
           title: 'Analog Gravity',
           description: "Gravity analogies in low-energy systems",
