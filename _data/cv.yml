@@ -46,11 +46,18 @@
 - title: Appointments
   type: time_table
   contents:
+    - title: Associate Professor with tenure
+      institution: Louisiana State University
+      department: Physics & Astronomy
+      location: Baton Rouge, LA
+      year: 2026 - present
+      description:
+        - Promotion and tenure approved April 14, 2026; effective August 15, 2026.
     - title: Assistant Professor
       institution: Louisiana State University
       department: Physics & Astronomy
       location: Baton Rouge, LA
-      year: 2021 - present
+      year: 2021 - 2026
       description: []
     - title: Postdoctoral Associate
       institution: Rutgers University
@@ -140,6 +147,10 @@
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: "2026"
+      items:
+        - Promoted to Associate Professor with tenure, Louisiana State University
+        - Approved April 14, 2026; effective August 15, 2026
     - year: "2025"
       items:
         - LSU Alumni Association Rising Faculty Research Award
